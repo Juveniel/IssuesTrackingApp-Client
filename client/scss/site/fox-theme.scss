@@ -49,7 +49,19 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   -moz-border-right-colors: $glass;
 }
 
-  // Slider
+.l-header-mobile-trigger {
+  color: $white;
+}
+
+.l-mobile-menu .mobile-menu-item a{
+  color: $white;
+}
+
+.l-header.shrinked-header .l-header-mobile-trigger{
+  color: $silver;
+}
+
+// Slider
 .m-slider .slide-title,
 .m-slider .slide-subtitle {
   color: $white;

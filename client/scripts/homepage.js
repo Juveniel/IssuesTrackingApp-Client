@@ -128,3 +128,56 @@ $(function() {
         StickyNavigation();
     });
 });
+
+/* Off-canvas mobile navigation */
+$(function() {
+    var mobileMenu = $('#mobile-menu'),
+        mobileMenuTrigger = $('.l-header-mobile-trigger'),
+        mobileMenuClose = $('#mobile-menu-close'),
+        bodySlideTrigger = $('.content-slide-trigger'),
+        headerSlideTrigger = $('.header-slide-trigger');
+
+    if ($(window).width() > 1020) {
+        mobileMenu.removeClass('mm-open');
+        bodySlideTrigger.removeClass('slided-content-body');
+        headerSlideTrigger.removeClass('slided-content-header');
+    }
+    if ($(window).width() < 1020) {
+        mobileMenuTrigger.show();
+    }
+
+    mobileMenuClose.click(function(e){
+        mobileMenu.removeClass('mm-open');
+        bodySlideTrigger.removeClass('slided-content-body');
+        headerSlideTrigger.removeClass('slided-content-header');
+    });
+
+    mobileMenuTrigger.click(function(e){
+        if(mobileMenu.hasClass('mm-open')) {
+            mobileMenu.removeClass('mm-open');
+            bodySlideTrigger.removeClass('slided-content-body');
+            headerSlideTrigger.removeClass('slided-content-header');
+        } else {
+            mobileMenu.addClass('mm-open');
+            bodySlideTrigger.addClass('slided-content-body');
+            headerSlideTrigger.addClass('slided-content-header');
+        }
+    });
+
+    $(document).on('mousedown touchstart',function (e){
+        var container = $('.mm-open');
+
+        if (!container.is(e.target)
+            && container.has(e.target).length === 0)
+        {
+            mobileMenu.removeClass('mm-open');
+            bodySlideTrigger.removeClass('slided-content-body');
+            headerSlideTrigger.removeClass('slided-content-header');
+        }
+    });
+});
+
+
+
+
+

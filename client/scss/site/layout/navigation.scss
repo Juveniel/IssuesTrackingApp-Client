@@ -88,6 +88,71 @@
   border-right:1px solid;
 }
 
+.l-mobile-menu {
+  background: #222533;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  height: 100%;
+  z-index: 60000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform .5s;
+  -o-transition: -o-transform .5s;
+  -ms-transition: -ms-transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.l-mobile-menu.mm-open {
+  -webkit-transform: translateX(0) !important;
+  -moz-transform: translateX(0) !important;
+  -ms-transform: translateX(0) !important;
+  -o-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+
+.content-slide-trigger,
+.header-slide-trigger {
+  transition: transform .5s;
+}
+
+.slided-content-body,
+.slided-content-header {
+  -webkit-transform: translateX(-269px);
+  -moz-transform: translateX(-269px);
+  -ms-transform: translateX(-269px);
+  -o-transform: translateX(-269px);
+  transform: translateX(-269px);
+}
+
+.l-mobile-menu .mobile-menu-item {
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(0,0,0,.35);
+}
+
+.l-mobile-menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.l-mobile-menu .mobile-menu-item a {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  padding: 10px 20px 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 // Responsive
 @media (min-width: 992px) and (max-width: 1201px) {
   .l-header-nav .l-header-nav-item a, .l-header-account-nav .l-header-account-nav-item a {
@@ -99,6 +164,25 @@
   }
 }
 
+@media all and (max-width: 992px) {
+  .l-header-logo {
+    float: left;
+  }
+  .l-header-bottom .navbar-header {
+    line-height: 65px;
+    max-height: 65px;
+    padding: 0 15px;
+  }
+  .l-header-mobile-trigger {
+    height: 50px;
+  }
+  .l-header-mobile-trigger i {
+    float: left;
+  }
+  .l-header {
+    min-height: 65px;
+  }
+}
 @media (min-width: 768px) and (max-width: 992px) {
   .navbar-collapse.collapse {
     display: none !important;
@@ -111,22 +195,5 @@
   }
   .navbar-header {
     float:none;
-  }
-
-  .l-header-logo {
-    float: left;
-  }
-  .l-header-bottom .navbar-header {
-    line-height: 65px;
-    max-height: 65px;
-  }
-  .l-header-mobile-trigger {
-    height: 50px;
-  }
-  .l-header-mobile-trigger i {
-    float: left;
-  }
-  .l-header {
-    min-height: 65px;
   }
 }

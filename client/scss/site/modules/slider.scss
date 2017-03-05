@@ -56,7 +56,7 @@
   }
 
   .m-slider .slide-title{
-    font-size: 130px;
+    font-size: 12em;
   }
 
   .m-slider .slide-logo {
@@ -64,3 +64,30 @@
     height: 380px;
   }
 }
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .m-slider .slide-subtitle {
+    margin-top: 20px;
+  }
+
+  .m-slider .slide-title{
+    font-size: 12em;
+  }
+
+  .m-slider .slide-logo {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media only screen and (max-width : 1200px) {
+  .m-slider .slide-title{
+    font-size: 15vw;
+  }
+
+  .m-slider .slide-subtitle {
+    font-size: 3vw;
+    margin-top: 10vh;
+  }
+}
+

@@ -31,15 +31,13 @@
     <!-- endbuild-->
 </head>
 <body>
-    <header class="l-header default sticky-header transparent">
+    <header class="l-header default sticky-header transparent header-slide-trigger">
         <div class="l-header-wrapper">
             <div class="l-header-bottom">
                 <div class="container">
                     <div class="navbar-header">
                         <button class="l-header-mobile-trigger navbar-toggle collapsed"
                                 type="button"
-                                data-toggle="collapse"
-                                data-target="#main-navigation"
                                 aria-expanded="false"
                                 aria-controls="navbar">
                             <i class="fa fa-bars fa-2x"></i>
@@ -87,14 +85,35 @@
                             </li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </header>
 
-    <main id="l-page-content"></main>
+    <div id="mobile-menu" class="l-mobile-menu">
+        <ul>
+            <li class="mobile-menu-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#features">Management</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#specifics">Customization</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#support">Support</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#demo">Demo</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#contacts">Contacts</a>
+            </li>
+        </ul>
+    </div>
+
+    <main id="l-page-content" class="content-slide-trigger"></main>
 
     <footer>
 

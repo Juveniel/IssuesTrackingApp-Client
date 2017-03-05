@@ -80,12 +80,27 @@ $(document).ready(function () {
     });
 });
 
+/* Smooth scroll */
+$(function () {
+    $('a.page-scroll').bind('click', function (event) {
+        var $anchor = $(this),
+            $affixHegiht =  $('#main-navigation').height();
+
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top - 55
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
 
 /* Opacity scroll */
 $(window).scroll(function() {
     var st = $(this).scrollTop();
+
     $('.opacity_scroll').each(function() {
-        $(this).css({'opacity': (1 - st / $(this).offset().top)});
+        $(this).css({
+            'opacity': (1 - st / $(this).offset().top)
+        });
     });
 });
 

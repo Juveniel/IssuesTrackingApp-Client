@@ -1,0 +1,50 @@
+{
+  "name": "issues-tracking-app",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juveniel/IssuesTrackingApp-Client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juveniel/IssuesTrackingApp-Client/issues"
+  },
+  "homepage": "https://github.com/Juveniel/IssuesTrackingApp-Client#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/core-js": "^0.9.35",
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.22.0",
+    "browser-sync": "^2.18.8",
+    "chai": "^3.5.0",
+    "del": "^2.2.2",
+    "eslint": "^3.14.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rewrite-image-path": "0.0.4",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
+    "mocha": "^3.2.0",
+    "pump": "^1.0.2",
+    "run-sequence": "^1.2.2",
+    "sass-lint": "^1.10.2",
+    "sinon": "^1.17.7"
+  },
+  "sasslintConfig": "linters/.sass-lint.yml"
+}

@@ -1,0 +1,89 @@
+// Navigation
+.l-header {
+  min-height: 101px;
+  position: absolute;
+  transition: all .2s linear;
+  width: 100%;
+  z-index: 999;
+}
+
+.l-header-wrapper {
+  top: 0;
+  position: relative;
+  left: 0;
+  width: 100%;
+}
+
+.l-header.opaque-header .l-header-logo.white {
+  display: none;
+}
+.l-header.opaque-header .l-header-logo.dark {
+  display: block;
+}
+
+.l-header.shrinked-header {
+  min-height: 56px;
+}
+
+.l-header.shrinked-header .navbar-header {
+  max-height: 55px;
+  line-height: 55px;
+}
+
+.l-header.shrinked-header .l-header-nav-item a,
+.l-header.shrinked-header .l-header-account-nav-item a {
+  padding: 18px 20px;
+}
+
+.l-header-bottom .navbar-header {
+  line-height: 100px;
+  max-height: 100px;
+}
+
+.l-header-logo {
+  display: block;
+  transition: all .2s linear;
+}
+
+.l-header-logo img {
+  vertical-align: middle;
+  margin-top: -1px;
+  max-height: 100px;
+  max-width: 155px;
+}
+
+.l-header-logo.dark{
+  display: none;
+}
+
+.l-header-logo.dark img{
+  max-height: 35px;
+}
+
+.l-header-account-nav {
+  margin: 0;
+  border: 0;
+}
+
+.l-header-account-nav-item {
+  float: left;
+}
+
+.l-header-nav .l-header-nav-item a,
+.l-header-account-nav .l-header-account-nav-item a {
+  display: block;
+  padding: 40px 20px  ;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all .2s linear;
+  opacity: .75;
+  border-color: transparent;
+  background: 0 0;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.l-header-account-nav-item.account-btn {
+  border-left: 1px solid;
+  border-right:1px solid;
+}

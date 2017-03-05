@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Dimitar Kalaydzhiev">
+    <title>Issues Tracking App</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- External Css -->
+    <!-- build:css styles/vendor.min.css  -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bower_components/revslider/css/style.css" rel="stylesheet">
+    <link href="bower_components/revslider/css/extralayers.css" rel="stylesheet">
+    <link href="bower_components/revslider/css/settings.css" rel="stylesheet">
+    <!-- endbuild-->
+
+    <!-- build:css styles/theme.min.css  -->
+    <link href="styles/theme.css" rel="stylesheet">
+    <!-- endbuild-->
+</head>
+<body>
+    <header class="l-header default sticky-header transparent">
+        <div class="l-header-wrapper">
+            <div class="l-header-bottom">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="l-header-mobile-trigger navbar-toggle collapsed"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#main-navigation"
+                                aria-expanded="false"
+                                aria-controls="navbar">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </button>
+                        <a href="/" class="l-header-logo white" aria-label="Homepage">
+                            <img src="./media/homepage/logo_sm.png" alt="site logo" />
+                        </a>
+                        <a href="/" class="l-header-logo dark" aria-label="Homepage">
+                            <img src="./media/homepage/logo_sm_dark.png" alt="site logo" />
+                        </a>
+                    </div>
+                    <div id="main-navigation" class="l-header-navbar navbar-collapse collapse">
+                        <ul class="l-header-account-nav nav navbar pull-right">
+                            <li class="l-header-account-nav-item">
+                                <a href="/login">
+                                    <i class="fa fa-search "></i>
+                                </a>
+                            </li>
+                            <li class="l-header-account-nav-item account-btn">
+                                <a href="/login">
+                                    <!--<i class="fa fa-user fa-2x"></i>-->
+                                    Account
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="l-header-nav nav navbar-nav pull-right">
+                            <li class="l-header-nav-item active">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="l-header-nav-item">
+                                <a href="#features">Management</a>
+                            </li>
+                            <li class="l-header-nav-item">
+                                <a href="#specifics">Customization</a>
+                            </li>
+                            <li class="l-header-nav-item">
+                                <a href="#support">Support</a>
+                            </li>
+                            <li class="l-header-nav-item">
+                                <a href="#demo">Demo</a>
+                            </li>
+                            <li class="l-header-nav-item">
+                                <a href="#contacts">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="l-page-content"></main>
+
+    <footer>
+
+    </footer>
+
+    <!-- build:js scripts/vendor.min.js -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/revslider/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="bower_components/revslider/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
+    <script type="text/javascript" src="bower_components/sammy/lib/sammy.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.min.js -->
+    <script type="text/javascript" src="./scripts/homepage.js"></script>
+    <script src="./scripts/helpers/requester.js"></script>
+    <script src="./scripts/data/homeData.js"></script>
+    <script src="./scripts/helpers/handlebars-template.js"></script>
+    <script src="./scripts/controllers/homeController.js"></script>
+    <script src="./scripts/app.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

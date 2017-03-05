@@ -1,0 +1,50 @@
+// Slider Module
+
+.m-slider {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-color: rgb(28, 32, 45);
+}
+
+.m-slider .slide-title {
+  font-size: 140px;
+}
+
+.m-slider .slide-title span {
+  float: left;
+}
+
+.m-slider .slide-title .lg {
+  font-family: lato-black;
+}
+
+.m-slider .slide-subtitle {
+  font-size: 25px;
+  letter-spacing: 0.13em;
+}
+
+.tp-banner-container {
+  height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.tp-banner-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tp-banner {
+  position: relative;
+  width: 100%;
+}
+
+.tp-banner-fullscreen-container {
+  padding: 0;
+  position: relative;
+  width: 100%;
+}

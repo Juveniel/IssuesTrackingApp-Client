@@ -1,0 +1,57 @@
+// Layout
+h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
+
+// Navigation
+.l-header {
+  border-bottom: 1px solid $glass;
+}
+
+.l-header.transparent {
+  background: transparent;
+}
+
+.l-header.opaque-header {
+  background: $white;
+}
+
+.l-header.shrinked-header .l-header-nav .l-header-nav-item a,
+.l-header.shrinked-header .l-header-account-nav .l-header-account-nav-item a {
+  color: $silver;
+}
+
+.l-header-nav .l-header-nav-item.active a,
+.l-header-account-nav .l-header-account-nav-item.active a {
+  background: transparent;
+  color: $electric-green;
+}
+
+.l-header-nav .l-header-nav-item a,
+.l-header-account-nav .l-header-account-nav-item a {
+  color: $white;
+
+  &:focus {
+    background: transparent;
+  }
+
+  &:active {
+    background: transparent;
+  }
+
+  &:hover {
+    background: transparent;
+    color: $electric-green;
+  }
+}
+
+.l-header-account-nav-item.account-btn {
+  border-color: $glass;
+  -moz-border-left-colors: $glass;
+  -moz-border-right-colors: $glass;
+}
+
+  // Slider
+.m-slider .slide-title,
+.m-slider .slide-subtitle {
+  color: $white;
+}
+

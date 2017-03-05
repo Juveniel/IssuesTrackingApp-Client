@@ -1,0 +1,29 @@
+{
+  "name": "issues-tracking-app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Dimitar Kalaydzhiev <dimitar.kalaydzhievv@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Juveniel/IssuesTrackingApp-Client",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "font-awesome": "^4.7.0",
+    "sammy": "^0.7.6",
+    "handlebars": "^4.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "chai": "^3.5.0",
+    "sinon": "^1.17.7"
+  }
+}

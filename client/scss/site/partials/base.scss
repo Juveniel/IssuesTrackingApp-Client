@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Lato,Arial,sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+main {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 46px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

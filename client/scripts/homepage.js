@@ -65,6 +65,7 @@ $(document).ready(function () {
 
         autoHeight: 'off',
         forceFullWidth: 'off',
+        fullScreenAlignForce:'on',
 
         hideThumbsOnMobile: 'off',
         hideNavDelayOnMobile: 1500,

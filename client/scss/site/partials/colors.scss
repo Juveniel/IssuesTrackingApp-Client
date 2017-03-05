@@ -1,3 +1,4 @@
+// Colors
 $dark-grey: #1A1C27;
 $light-grey: #8798A3;
 $silver: #A1B1BC;
@@ -7,4 +8,24 @@ $white: #FFF;
 $dark-blue: #2C3E50;
 
 $electric-green: #03FBCA;
+$electric-blue: #00FFF0;
+$electric-pink: #FF2361;
+$lime: #B4FF52;
+$orange: #FF701A;
 
+// Color classes
+.lime {
+  color: $lime;
+}
+
+.orange {
+  color: $orange;
+}
+
+.electric-pink {
+  color: $electric-pink
+}
+
+.electric-blue {
+  color: $electric-blue;
+}

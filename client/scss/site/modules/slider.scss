@@ -48,3 +48,19 @@
   position: relative;
   width: 100%;
 }
+
+// Responsive
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .m-slider .slide-subtitle {
+    margin-top: 20px;
+  }
+
+  .m-slider .slide-title{
+    font-size: 130px;
+  }
+
+  .m-slider .slide-logo {
+    width: 380px;
+    height: 380px;
+  }
+}

@@ -80,6 +80,13 @@ $(document).ready(function () {
     });
 });
 
+/* Slider particles */
+$(function() {
+    particlesJS.load('particles-js', '/scripts/configs/particlesjs-config.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+});
+
 /* Smooth scroll */
 $(function () {
     $('a.page-scroll').bind('click', function (event) {

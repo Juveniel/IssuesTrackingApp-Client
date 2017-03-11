@@ -1,6 +1,26 @@
 // Layout
 h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
+// Buttons
+.btn-ghost {
+  color: $white;
+  background: rgba(0,0,0,0.01);
+  border-color: $white;
+
+  &:hover {
+    background: #45cdfe;
+    border-color: #45cdfe;
+  }
+
+  &:hover a {
+    color: $white;
+  }
+}
+
+.btn-ghost a {
+  color: $white;
+}
+
 // Navigation
 .l-header {
   border-bottom: 1px solid $glass;
@@ -61,6 +81,16 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   color: $silver;
 }
 
+// Sections
+.l-section .heading > .border {
+
+  border-top-color: #21c2f8;
+}
+.l-section .heading > .border.white {
+
+  border-top-color: $white;
+}
+
 // Slider
 .m-slider .slide-title,
 .m-slider .slide-subtitle {
@@ -79,4 +109,36 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 // Management
 .m-management {
   background: $white;
+}
+
+.m-management .description {
+  color: $medium-grey;
+}
+
+// Customziation
+.m-customization .heading h2 {
+  color: $white;
+}
+
+.m-customization .description {
+  color: $white;
+}
+
+.m-customization .showcase-box .heading > h3 {
+  color: $white;
+}
+.m-customization .showcase-box .description-inner {
+  color: $white;
+}
+
+.m-customization {
+  background: #6bc4fe url('/media/homepage/bg-customization.jpg');
+}
+
+// Demo section
+.m-demo {
+  background-image: url("/media/homepage/bg-parallax.jpg");
+}
+.m-demo .heading h2 {
+  color: $white;
 }

@@ -1,0 +1,21 @@
+.btn-ghost {
+  margin: 0;
+  font-weight: 900;
+  border-radius: 3px;
+  border-style: solid;
+  padding: 22px 18px;
+  transition: all .2s linear;
+}
+
+.btn-ghost a {
+  text-transform: uppercase;
+  transition: all .2s linear;
+}
+
+.btn-medium-large {
+  font-size: 16px;
+  min-width: 225px;
+  max-width: 100%;
+  vertical-align: middle;
+  max-height: 65px;
+}

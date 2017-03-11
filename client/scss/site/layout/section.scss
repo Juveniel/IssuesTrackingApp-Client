@@ -1,0 +1,40 @@
+.l-section {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.l-section > .container {
+  padding: 100px 0;
+}
+
+.l-section .heading > h2 {
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.l-section .heading > h3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.l-section .heading > .border {
+  width: 100px;
+  display: block;
+  position: relative;
+  margin: 0 auto 20px auto;
+  border-top: 1px solid #21c2f8;
+}
+
+.l-section .description {
+  line-height: 32px;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 35px auto;
+  text-align: center;
+}
+
+.l-section .image img{
+  height: auto;
+  max-width: 100%;
+}

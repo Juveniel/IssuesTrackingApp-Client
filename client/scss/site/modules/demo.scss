@@ -1,0 +1,27 @@
+.m-demo {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.m-demo .heading h2 {
+  text-transform: uppercase;
+  font-size: 85px;
+  color: #ffffff;
+  line-height: 90px;
+  font-weight: 900;
+  font-family: lato-bold;
+}
+
+.m-demo .description p{
+  font-size: 36px;
+  color: #ffffff;
+  line-height: 40px;
+  text-align: center;
+  font-family: lato-light;
+}
+
+.m-demo .options {
+  text-align: center;
+}

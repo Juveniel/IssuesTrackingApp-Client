@@ -8,8 +8,8 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   border-color: $white;
 
   &:hover {
-    background: #45cdfe;
-    border-color: #45cdfe;
+    background: $sky-blue-light;
+    border-color: $sky-blue-light;
   }
 
   &:hover a {
@@ -19,6 +19,22 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
 .btn-ghost a {
   color: $white;
+}
+
+.btn-gradient.gradient-green-blue {
+  color: $white;
+  background: #18e2ba;
+  background: -moz-linear-gradient(-45deg, $electric-green 0%, $light-blue 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#18e2ba), color-stop(100%,$light-blue));
+  background: -webkit-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
+  background: -o-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
+  background: -ms-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
+  background: linear-gradient(135deg, $electric-green 0%, $light-blue 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#18e2ba", endColorstr="#47d1ff",GradientType=1 );
+
+  &:hover {
+    background: linear-gradient(135deg, $electric-green 0%, $electric-green 100%) !important;
+  }
 }
 
 // Navigation
@@ -84,11 +100,14 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 // Sections
 .l-section .heading > .border {
 
-  border-top-color: #21c2f8;
+  border-top-color: $sky-blue;
 }
 .l-section .heading > .border.white {
 
   border-top-color: $white;
+}
+.l-section.section-transition .bottom-arrow{
+  background: $sky-blue;
 }
 
 // Slider
@@ -99,7 +118,7 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
 // Features
 .m-key-features {
-  background-color: #1c202d;
+  background-color: $medium-black;
 }
 
 .m-key-features .heading h2 {
@@ -132,7 +151,12 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 }
 
 .m-customization {
-  background: #6bc4fe url('/media/homepage/bg-customization.jpg');
+  background: $light-blue url('/media/homepage/bg-customization.jpg');
+}
+
+// Support
+.m-support {
+  background: $white;
 }
 
 // Demo section
@@ -141,4 +165,34 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 }
 .m-demo .heading h2 {
   color: $white;
+}
+
+// Contacts heading
+.m-contacts-heading {
+  background: $sky-blue;
+  color: $white;
+}
+.m-contacts-heading .heading h2{
+  color: $white;
+}
+
+// Contacts main
+.m-contacts {
+  background: $grey-pastel;
+  color: $white;
+}
+
+.m-contacts .heading h3 {
+  color: $white;
+}
+
+.m-contacts .contact-info .social-link i {
+  color: $white;
+}
+
+// Footer
+.l-footer {
+  border-top: 1px solid $glass;
+  color: $silver;
+  background: $dark-grey;
 }

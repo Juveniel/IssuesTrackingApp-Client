@@ -1,3 +1,4 @@
+// Ghost
 .btn-ghost {
   margin: 0;
   font-weight: 900;
@@ -18,4 +19,20 @@
   max-width: 100%;
   vertical-align: middle;
   max-height: 65px;
+}
+
+// Prism
+.btn-gradient {
+  margin: 0 30px 0px 0;
+  font-weight: 900;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn-gradient-lg {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 15px 11px;
+  vertical-align: middle;
+  max-height: 40px;
 }

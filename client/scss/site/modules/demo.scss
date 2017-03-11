@@ -25,3 +25,9 @@
 .m-demo .options {
   text-align: center;
 }
+
+@media only screen and (max-width : 768px) {
+  .m-demo.l-section .heading h2 {
+    font-size: 12vw;
+  }
+}

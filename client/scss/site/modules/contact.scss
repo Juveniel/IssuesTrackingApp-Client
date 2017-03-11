@@ -1,0 +1,90 @@
+.m-contacts {
+  z-index: 2;
+}
+.m-contacts .contact-info .heading h3{
+  font-size: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top :0;
+}
+
+.m-contacts .contact-info .contacts-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.m-contacts .contact-info .contacts-list .contacts-list-item {
+  margin-bottom: 5px;
+}
+
+.m-contacts .contact-info .contacts-list .contacts-list-item i {
+  margin-right: 15px;
+}
+
+.m-contacts .contact-info .social-link {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-smoothing: antialiased;
+
+  &:before, &:after  {
+    content: "";
+    display: block;
+    position: absolute;
+    background: transparent;
+    top: 0; bottom: 0; left: 0; right: 0;
+    border-radius: 50%;
+    transition: .3s all;
+    visibility: visible;
+  }
+
+  &:hover:after{
+    border: 1px solid #fff;
+    -webkit-transform: scale(1.1);
+    visibility: visible;
+  }
+
+  &:hover:before{
+    border: 1px solid #fff;
+    -webkit-transform: scale(2);
+    transition: .3s all;
+    opacity: 0;
+  }
+}
+
+.m-contacts .contact-info .social-link i {
+  font-size: 1.2em;
+}
+
+.m-contacts .contact-form .form-control {
+  border: 1px solid $beige;
+  background: transparent;
+  border-radius: 0;
+  height: 40px;
+}
+
+.m-contacts .contact-form textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+.m-contacts .contact-form .form-control-feedback {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size:1.2em;
+}
+
+@media only screen and (max-width : 768px) {
+  .m-contacts .contact-info {
+    margin-bottom: 30px;
+  }
+}

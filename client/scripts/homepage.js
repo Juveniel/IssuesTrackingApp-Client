@@ -1,10 +1,19 @@
 'use strict';
 
+$(function() {
+    function setSLiderHeight() {
+        $('#hp-slider').css({height: $(window).height()});
+    }
+
+    $(window).on('resize', setSLiderHeight);
+    setSLiderHeight();
+});
+
 /* Initializes Homepage Slider */
 $(document).ready(function () {
     jQuery('.tp-banner').show().revolution({
         dottedOverlay: 'none',
-        delay: 16000,
+        delay: 9000,
         startwidth: 1170,
         startheight: 700,
         hideThumbs: 200,
@@ -52,7 +61,7 @@ $(document).ready(function () {
         soloArrowRightVOffset: 0,
 
         shadow: 0,
-        fullWidth: 'off',
+        fullWidth: 'on',
         fullScreen: 'on',
 
         spinner: 'spinner4',

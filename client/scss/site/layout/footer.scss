@@ -1,0 +1,15 @@
+.l-footer {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.l-footer .copyright {
+  line-height: 32px;
+  height: 32px;
+}
+
+.l-footer .copyright a {
+  color: $sky-blue;
+}

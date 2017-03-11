@@ -38,3 +38,28 @@
   height: auto;
   max-width: 100%;
 }
+
+.l-section.section-transition > .container {
+  padding-top: 67px;
+  padding-bottom: 8px;
+}
+
+.l-section.section-transition .bottom-arrow {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+}
+
+@media only screen and (max-width : 768px) {
+  .l-section > .container {
+    padding: 50px 15px;
+  }
+}

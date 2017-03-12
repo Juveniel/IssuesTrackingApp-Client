@@ -42,22 +42,22 @@
                                 aria-controls="navbar">
                             <i class="fa fa-bars fa-2x"></i>
                         </button>
-                        <a href="/" class="l-header-logo white" aria-label="Homepage">
+                        <a href="#/home" class="l-header-logo white" aria-label="Homepage">
                             <img src="./media/homepage/logo_sm.png" alt="site logo" />
                         </a>
-                        <a href="/" class="l-header-logo dark" aria-label="Homepage">
+                        <a href="#/home" class="l-header-logo dark" aria-label="Homepage">
                             <img src="./media/homepage/logo_sm_dark.png" alt="site logo" />
                         </a>
                     </div>
                     <div id="main-navigation" class="l-header-navbar navbar-collapse collapse">
                         <ul class="l-header-account-nav nav navbar pull-right">
                             <li class="l-header-account-nav-item">
-                                <a href="/login">
+                                <a href="#/search">
                                     <i class="fa fa-search "></i>
                                 </a>
                             </li>
                             <li class="l-header-account-nav-item account-btn">
-                                <a href="/login">
+                                <a href="#/login">
                                     <!--<i class="fa fa-user fa-2x"></i>-->
                                     Account
                                 </a>
@@ -66,22 +66,22 @@
 
                         <ul class="l-header-nav nav navbar-nav pull-right">
                             <li class="l-header-nav-item active">
-                                <a href="/">Home</a>
+                                <a href="#/home">Home</a>
                             </li>
                             <li class="l-header-nav-item">
-                                <a href="#management-section" class="page-scroll">Management</a>
+                                <a href="#/home" data-target="#management-section" class="page-scroll">Management</a>
                             </li>
                             <li class="l-header-nav-item">
-                                <a href="#customization-section" class="page-scroll">Customization</a>
+                                <a href="#/home" data-target="#customization-section" class="page-scroll">Customization</a>
                             </li>
                             <li class="l-header-nav-item">
-                                <a href="#support-section" class="page-scroll">Support</a>
+                                <a href="#/home" data-target="#support-section" class="page-scroll">Support</a>
                             </li>
                             <li class="l-header-nav-item">
-                                <a href="#demo-section" class="page-scroll">Demo</a>
+                                <a href="#/home" data-target="#demo-section" class="page-scroll">Demo</a>
                             </li>
                             <li class="l-header-nav-item">
-                                <a href="#contacts-section" class="page-scroll">Contacts</a>
+                                <a href="#/home" data-target="#contacts-section" class="page-scroll">Contacts</a>
                             </li>
                         </ul>
                     </div>
@@ -92,26 +92,26 @@
 
     <div id="mobile-menu" class="l-mobile-menu">
         <ul>
-            <li class="mobile-menu-item">
-                <a href="/">Home</a>
+            <li class="mobile-menu-item active">
+                <a href="#/home">Home</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#management-section" class="page-scroll">Management</a>
+                <a href="#/home" data-target="#management-section" class="page-scroll">Management</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#customization-section" class="page-scroll">Customization</a>
+                <a href="#/home" data-target="#customization-section" class="page-scroll">Customization</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#support-section" class="page-scroll">Support</a>
+                <a href="#/home" data-target="#support-section" class="page-scroll">Support</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#demo-section" class="page-scroll">Demo</a>
+                <a href="#/home" data-target="#demo-section" class="page-scroll">Demo</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#contacts-section" class="page-scroll">Contacts</a>
+                <a href="#/home" data-target="#contacts-section" class="page-scroll">Contacts</a>
             </li>
             <li class="mobile-menu-item">
-                <a href="#account" class="page-scroll">Account</a>
+                <a href="#/login" class="page-scroll">Account</a>
             </li>
         </ul>
     </div>
@@ -137,15 +137,21 @@
     <script type="text/javascript" src="bower_components/particles.js/particles.min.js"></script>
     <script type="text/javascript" src="bower_components/handlebars/handlebars.min.js"></script>
     <script type="text/javascript" src="bower_components/sammy/lib/sammy.js"></script>
+    <script type="text/javascript" src="bower_components/sammy/lib/plugins/sammy.handlebars.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.min.js -->
     <script type="text/javascript" src="scripts/vendor/polyfill.js"></script>
-    <script type="text/javascript" src="./scripts/homepage.js"></script>
+    <script type="text/javascript" src="./scripts/events/main.js"></script>
     <script src="./scripts/helpers/requester.js"></script>
-    <script src="./scripts/data/homeData.js"></script>
     <script src="./scripts/helpers/handlebars-template.js"></script>
+
+    <script src="./scripts/data/homeData.js"></script>
+    <script src="./scripts/data/userData.js"></script>
+
     <script src="./scripts/controllers/homeController.js"></script>
+    <script src="./scripts/controllers/userController.js"></script>
+
     <script src="./scripts/app.js"></script>
     <!-- endbuild -->
 </body>

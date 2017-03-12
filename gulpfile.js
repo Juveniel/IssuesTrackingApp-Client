@@ -40,14 +40,20 @@ gulp.task('scripts', function() {
         .pipe(reload({ stream: true }));
 });
 
+// Event Scripts
+gulp.task('event-scripts', function() {
+    return gulp.src(['client/scripts/events/*.js'])
+        .pipe(gulp.dest('dist/scripts/events'));
+});
+
+// JSON Config
 gulp.task('json', () => {
     return gulp.src('client/scripts/**/*.json')
         .pipe(gulp.dest('dist/scripts'));
 });
 
-
 // Html
-gulp.task('html', ['styles', 'scripts'], () => {
+gulp.task('html', ['styles', 'scripts', 'event-scripts'], () => {
     return gulp.src('client/*.html')
         .pipe(plugins.useref({ searchPath: ['.tmp', 'client', '.'] }))
         .pipe(plugins.if('*.js', plugins.uglify()))
@@ -95,7 +101,7 @@ gulp.task('clean', function() {
 // Compile
 gulp.task('watch', () => {
     runSequence(['clean'],
-        ['styles', 'scripts', 'json', 'html', 'views', 'media', 'fonts', 'bower-fonts', 'uploads'], () => {
+        ['styles', 'scripts', 'event-scripts', 'json', 'html', 'views', 'media', 'fonts', 'bower-fonts', 'uploads'], () => {
         browserSync.init({
             notify: false,
             port: 9000,

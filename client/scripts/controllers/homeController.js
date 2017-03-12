@@ -8,7 +8,6 @@ class HomeController {
 
     renderHomeTemplate(content, context) {
         var $content = content;
-        var _this = this;
 
         this.template.getTemplate('home-template')
             .then((resultTemplate) => {

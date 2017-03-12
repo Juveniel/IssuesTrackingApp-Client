@@ -1,14 +1,5 @@
 'use strict';
 
-$(function() {
-    function setSLiderHeight() {
-        $('#hp-slider').css({height: $(window).height()});
-    }
-
-    $(window).on('resize', setSLiderHeight);
-    setSLiderHeight();
-});
-
 /* Initializes Homepage Slider */
 $(document).ready(function () {
     jQuery('.tp-banner').show().revolution({
@@ -89,9 +80,20 @@ $(document).ready(function () {
     });
 });
 
+$(function() {
+    function setSLiderHeight() {
+        $('#hp-slider').css({height: $(window).height()});
+    }
+
+    $(window).on('resize', setSLiderHeight);
+    setSLiderHeight();
+});
+
+
+
 /* Slider particles */
 $(function() {
-    particlesJS.load('particles-js', '/scripts/configs/particlesjs-config.json', function() {
+    particlesJS.load('particles-js', './scripts/configs/particlesjs-config.json', function() {
         console.log('callback - particles.js config loaded');
     });
 });

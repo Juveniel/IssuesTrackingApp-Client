@@ -34,11 +34,17 @@ gulp.task('sass-lint', () => {
 
 // Scripts
 gulp.task('scripts', function() {
-    return gulp.src('client/scripts/**/*.js')
+    return gulp.src(['client/scripts/**/*.js'])
         .pipe(plugins.babel())
         .pipe(gulp.dest('.tmp/scripts'))
         .pipe(reload({ stream: true }));
 });
+
+gulp.task('json', () => {
+    return gulp.src('client/scripts/**/*.json')
+        .pipe(gulp.dest('dist/scripts'));
+});
+
 
 // Html
 gulp.task('html', ['styles', 'scripts'], () => {
@@ -68,6 +74,13 @@ gulp.task('fonts', () => {
         .pipe(gulp.dest('dist/fonts'));
 });
 
+// Bower fonts
+gulp.task('bower-fonts', () => {
+    return gulp.src('client/bower_components/**/*.{eot,ttf,woff,woff2}')
+        .pipe(plugins.flatten())
+        .pipe(gulp.dest('dist/fonts'));
+});
+
 // Uploads
 gulp.task('uploads', () => {
     return gulp.src('client/uploads/**/*')
@@ -81,7 +94,8 @@ gulp.task('clean', function() {
 
 // Compile
 gulp.task('watch', () => {
-    runSequence(['clean'], ['styles', 'scripts', 'html', 'views', 'media', 'fonts', 'uploads'], () => {
+    runSequence(['clean'],
+        ['styles', 'scripts', 'json', 'html', 'views', 'media', 'fonts', 'bower-fonts', 'uploads'], () => {
         browserSync.init({
             notify: false,
             port: 9000,

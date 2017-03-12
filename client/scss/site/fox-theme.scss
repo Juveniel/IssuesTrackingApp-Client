@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 }
 
 .m-customization {
-  background: $light-blue url('/media/homepage/bg-customization.jpg');
+  background: $light-blue url('../media/homepage/bg-customization.jpg');
 }
 
 // Support
@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
 // Demo section
 .m-demo {
-  background-image: url("/media/homepage/bg-parallax.jpg");
+  background-image: url("../media/homepage/bg-parallax.jpg");
 }
 .m-demo .heading h2 {
   color: $white;

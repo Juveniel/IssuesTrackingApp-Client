@@ -5,14 +5,10 @@
 
         let requester = new Requester();
         let template = new HandlebarsTemplate();
+        let utils = new Utils(requester);
 
-
-        let homeData = new HomeData(requester),
-            userData = new UserData(requester);
-
-        let homeController = new HomeController(homeData, template),
-            userController = new UserController(userData, template);
-
+        let homeController = new HomeController(requester, template),
+            userController = new UserController(requester, template, utils);
 
         this.get('/', function (context) {
             context.redirect('#/home');
@@ -22,16 +18,28 @@
             homeController.renderHomeTemplate($content, context);
         });
 
+        this.get(/#\/home(#.+)?/, function() {
+            context.redirect('#/home');
+        });
+
         this.get('#/register', function (context) {
             userController.renderRegisterTemplate($content, context);
+        });
+
+        this.post('#/register', function (context) {
+            userController.register($content, context);
         });
 
         this.get('#/login', function (context) {
             userController.renderLoginTemplate($content, context);
         });
 
-        this.get(/#\/home(#.+)?/, function() {
-            context.redirect('#/home');
+        this.post('#/login', function (context) {
+            userController.login($content, context);
+        });
+
+        this.get('#/dashboard', function (context) {
+            userController.renderDashboardTemplate($content, context);
         });
     });
 

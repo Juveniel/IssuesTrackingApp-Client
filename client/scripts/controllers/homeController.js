@@ -1,8 +1,8 @@
 'use strict';
 
 class HomeController {
-    constructor(homeData, template) {
-        this.homeData = homeData;
+    constructor(requester, template) {
+        this.requester = requester;
         this.template = template;
     }
 

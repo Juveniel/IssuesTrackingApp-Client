@@ -1,1 +1,19 @@
-login
+<div class="m-login">
+    <form id="login-form" class="form" method="post" action="#/login">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            <span class="hidden">Invalid username or password!</span>
+        </div>
+        <div class="modal-footer justify-content-start">
+            <input type="submit" class="btn-gradient btn-gradient-lg" value="LOGIN">
+        </div>
+    </form>
+
+    <a href="#/register">You dont have an account? Register NOW!</a>
+</div>

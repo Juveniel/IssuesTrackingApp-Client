@@ -1,20 +1,29 @@
 <div class="m-register">
-    <form id="register-form" class="form" method="post" action="#/register">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
-        </div>
+    <div class="wrapper">
+        <h2 class="title">Register a new account</h2>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
-        </div>
+        <form id="register-form" class="form" method="post" action="#/register">
+            <div id="register-form-errors" class="alert alert-danger">
+                <strong>The following errors occurred:</strong>
+                <ul id="register-form-errors-list">
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-        </div>
+                </ul>
+            </div>
 
-        <button type="submit" class="btn-gradient">Register</button>
-    </form>
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="controls">
+                <button type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue">Register</button>
+            </div>
+        </form>
+    </div>
 </div>

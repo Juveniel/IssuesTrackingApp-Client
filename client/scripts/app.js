@@ -28,7 +28,7 @@
 
         // Authentication
         this.get('#/register', function (context) {
-            utils.appendBodyClass('home');
+            utils.appendBodyClass('home register');
 
             userController.renderRegisterTemplate($content, context);
         });
@@ -38,7 +38,7 @@
         });
 
         this.get('#/login', function (context) {
-            utils.appendBodyClass('home');
+            utils.appendBodyClass('home login');
 
             userController.renderLoginTemplate($content, context);
         });

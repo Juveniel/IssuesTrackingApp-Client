@@ -1,6 +1,71 @@
-.m-login {
+.home.login,
+.home.register{
+  height: 100%;
+}
+
+.m-login,
+.m-register {
   float: left;
   position: relative;
   width: 100%;
+  height: 100%;
   padding-top: 150px;
+  background: url("../media/auth/bg_auth.png");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display:flex;
+}
+
+.m-login .wrapper,
+.m-register .wrapper {
+  width: 370px;
+  margin: auto;
+}
+
+.m-login .wrapper > .title,
+.m-register .wrapper > .title {
+  font-size: 18px;
+  background: #2d323f;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 25px 0;
+  font-family: lato-black, sans-serif;
+}
+
+.m-login .wrapper > .form,
+.m-register .wrapper > .form {
+  padding: 33px 28px;
+}
+
+.m-login .form .form-control,
+.m-register .form .form-control {
+  padding: 20px 25px;
+  font-size: 16px;
+  border: 0;
+}
+
+.m-login .form .controls,
+.m-register .form .controls {
+  margin-top: 15px;
+}
+
+.m-login .form .form-group,
+.m-register .form .form-group {
+  margin-bottom: 10px;
+}
+
+.m-login .wrapper .options,
+.m-register .wrapper .options {
+  padding: 20px 0;
+}
+
+#login-form-errors,
+#register-form-errors {
+  display: none;
+}
+
+#register-form-errors ul {
+  padding: 0 0 0 15px;
 }

@@ -30,16 +30,21 @@ class UserController {
 
     login(content, context) {
         var $content = content,
-            data = context.params;
+            data = context.params,
+            errorsPlaceholder = $('#login-form-errors');
 
         this.requester.post('/api/auth/login', data)
             .then((result) => {
 
                 if (result.success) {
+                    errorsPlaceholder.html();
+                    errorsPlaceholder.hide();
+
                     localStorage.setItem('auth_token', result.auth_token);
                     context.redirect('#/dashboard');
                 } else {
-                    // show error
+                    errorsPlaceholder.html(result.message);
+                    errorsPlaceholder.show();
                 }
             });
     }
@@ -67,14 +72,23 @@ class UserController {
 
     register(content, context) {
         var $content = content,
-            data = context.params;
+            data = context.params,
+            errorsPlaceholder = $('#register-form-errors'),
+            errorsPlaceholderList = $('#register-form-errors-list');
 
         this.requester.post('/api/auth/register', data)
             .then((result) => {
                 if (result.success) {
+                    errorsPlaceholderList.html('');
                     context.redirect('#/login');
                 } else {
-                    //show error
+                    errorsPlaceholderList.html('');
+
+                    $.each(result.validationErrors, function(i, err) {
+                        errorsPlaceholderList.append('<li>' + err + '</li>');
+                    });
+                    
+                    errorsPlaceholder.show();
                 }
             });
     }

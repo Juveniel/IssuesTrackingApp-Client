@@ -196,3 +196,37 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   color: $silver;
   background: $dark-grey;
 }
+
+// Login & Register
+.m-login .wrapper > .title,
+.m-register .wrapper > .title {
+  color: $white;
+}
+.m-login .wrapper > .form,
+.m-register .wrapper > .form {
+  background: $dark-grey;
+}
+.m-login .form .form-control,
+.m-register .form .form-control {
+  background: $grey-pastel;
+  color: $beige;
+}
+
+.m-login ::-webkit-input-placeholder,
+.m-register ::-webkit-input-placeholder {
+  color:    $beige;
+}
+.m-login :-moz-placeholder,
+.m-register :-moz-placeholder {
+  color:    $beige;
+  opacity:  1;
+}
+.m-login ::-moz-placeholder,
+.m-register ::-moz-placeholder {
+  color:    $beige;
+  opacity:  1;
+}
+.m-login :-ms-input-placeholder,
+.m-register :-ms-input-placeholder {
+  color:    $beige;
+}

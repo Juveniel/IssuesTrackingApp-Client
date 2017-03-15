@@ -87,10 +87,15 @@ class UserController {
                     $.each(result.validationErrors, function(i, err) {
                         errorsPlaceholderList.append('<li>' + err + '</li>');
                     });
-                    
+
                     errorsPlaceholder.show();
                 }
             });
+    }
+
+    logout(content, context) {
+        localStorage.removeItem('auth_token');
+        context.redirect('#/home');
     }
 
     renderDashboardTemplate(content, context) {

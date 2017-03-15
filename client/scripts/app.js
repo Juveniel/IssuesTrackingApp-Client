@@ -47,6 +47,10 @@
             userController.login($content, context);
         });
 
+        this.get('#/logout', function (context) {
+            userController.logout($content, context);
+        });
+
         // Dashboard
         this.get('#/dashboard', function (context) {
             utils.appendBodyClass('dashboard');

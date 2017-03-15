@@ -25,6 +25,7 @@
 }
 
 .dashboard-main-section .dashboard-header > h2 {
+  float: left;
   font-size: 16px;
   text-transform: uppercase;
   line-height: 26px;
@@ -33,6 +34,13 @@
   margin: 0;
   padding-left: 30px;
   text-align: left;
+}
+
+.dashboard-main-section .dashboard-header .dashboard-options {
+  margin: 0;
+  padding: 30px;
+  font-size: 20px;
+  line-height: 26px;
 }
 
 .dashboard-main-section .dashboard-content {

@@ -1,37 +1,35 @@
 .home.login,
-.home.register{
+.home.register {
   height: 100%;
 }
 
 .m-login,
 .m-register {
+  display: flex;
   float: left;
   position: relative;
   width: 100%;
   height: 100%;
   padding-top: 150px;
-  background: url("../media/auth/bg_auth.png");
-  -webkit-background-size: cover;
+  background: url('../media/auth/bg_auth.png');
   background-size: cover;
   background-repeat: no-repeat;
-  display:flex;
 }
 
 .m-login .wrapper,
 .m-register .wrapper {
-  width: 370px;
   margin: auto;
+  width: 370px;
 }
 
 .m-login .wrapper > .title,
 .m-register .wrapper > .title {
-  font-size: 18px;
-  background: #2d323f;
-  text-transform: uppercase;
-  text-align: center;
   margin: 0;
   padding: 25px 0;
   font-family: lato-black, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .m-login .wrapper > .form,
@@ -61,11 +59,10 @@
   padding: 20px 0;
 }
 
-#login-form-errors,
-#register-form-errors {
+.auth-error-block {
   display: none;
 }
 
-#register-form-errors ul {
+.auth-error-block > ul {
   padding: 0 0 0 15px;
 }

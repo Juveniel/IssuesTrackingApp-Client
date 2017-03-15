@@ -9,8 +9,8 @@
 }
 
 .l-section .heading > h2 {
+  margin: 0 0 25px;
   text-align: center;
-  margin: 0 0 25px 0;
 }
 
 .l-section .heading > h3 {
@@ -19,22 +19,22 @@
 }
 
 .l-section .heading > .border {
-  width: 100px;
   display: block;
+  margin: 0 auto 20px;
+  width: 100px;
   position: relative;
-  margin: 0 auto 20px auto;
-  border-top: 1px solid #21c2f8;
+  border-top: 1px solid;
 }
 
 .l-section .description {
+  margin: 0 auto 35px;
   line-height: 32px;
   font-size: 18px;
   max-width: 800px;
-  margin: 0 auto 35px auto;
   text-align: center;
 }
 
-.l-section .image img{
+.l-section .image img {
   height: auto;
   max-width: 100%;
 }
@@ -49,24 +49,20 @@
   height: 20px;
   position: absolute;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   bottom: -10px;
   left: 50%;
   margin-left: -10px;
 }
 
-.home #l-dashboard {
+.home .l-dashboard {
   display: none;
 }
 
-.home #l-page-content {
+.home .l-page-content {
   display: block;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   .l-section > .container {
     padding: 50px 15px;
   }

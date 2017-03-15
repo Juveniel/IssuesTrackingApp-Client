@@ -1,8 +1,8 @@
-.dashboard #l-page-content {
+.dashboard .l-page-content {
   display: none;
 }
 
-.dashboard #l-dashboard {
+.dashboard .l-dashboard {
   display: block;
 }
 
@@ -15,32 +15,30 @@
 }
 
 .dashboard-main-section .dashboard-header {
+  margin: 0;
+  padding: 0;
   height: auto;
   border-bottom: 1px solid;
-  -moz-box-shadow: 1px 0 4px;
-  -webkit-box-shadow: 1px 0 4px;
   box-shadow: 1px 0 4px;
-  padding: 0;
-  margin: 0;
 }
 
 .dashboard-main-section .dashboard-header > h2 {
+  margin: 0;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 16px;
   text-transform: uppercase;
   line-height: 26px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 0;
-  padding-left: 30px;
   text-align: left;
 }
 
 .dashboard-main-section .dashboard-content {
-  border: none;
-  overflow-y: auto;
-  height: calc(100% - 86px);
-  padding: 0;
   margin: 0;
+  padding: 0;
+  height: calc(100% - 86px);
+  border: 0;
+  overflow-y: auto;
 }
 
 // Responsive

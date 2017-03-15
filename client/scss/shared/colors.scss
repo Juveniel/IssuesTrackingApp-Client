@@ -1,13 +1,19 @@
 // Dark
 $dark-grey: #1A1C27;
+$dark-blue: rgb(28, 32, 45);
 $medium-black: #1C202D;
+$pastel-blue: #2D323F;
 $grey-pastel: #333542;
 $dark-blue: #2C3E50;
+$grey-opacity-05: rgba(255, 255, 255, .05);
+$black-opacity-03: rgba(0, 0, 0, .35);
+$black-opacity-0: rgba(0, 0, 0, .01);
 $glass: rgba(255, 255, 255, .25);
 $medium-grey: #777;
 $beige: #979797;
 $light-grey: #8798A3;
 $silver: #A1B1BC;
+
 
 // Light
 $white: #FFF;
@@ -20,10 +26,9 @@ $electric-pink: #FF2361;
 $orange: #FF701A;
 $lime: #B4FF52;
 
-
 // Gradient
 $green-gradient: #18E2BA;
-$blue-gradient: #47d1ff;
+$blue-gradient: #47D1FF;
 
 // Social
 $facebook: #46629E;
@@ -49,7 +54,7 @@ $db-white-shadow: #EDEDEE;
 }
 
 .electric-pink {
-  color: $electric-pink
+  color: $electric-pink;
 }
 
 .electric-blue {

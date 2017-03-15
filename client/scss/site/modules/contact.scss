@@ -1,16 +1,17 @@
 .m-contacts {
   z-index: 2;
 }
-.m-contacts .contact-info .heading h3{
+
+.m-contacts .contact-info .heading h3 {
   font-size: 16px;
   text-align: left;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 30px;
-  margin-top :0;
+  margin-top: 0;
 }
 
-.m-contacts .contact-info .contacts-list{
+.m-contacts .contact-info .contacts-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -25,8 +26,8 @@
 }
 
 .m-contacts .contact-info .social-link {
-  position: relative;
   display: inline-block;
+  position: relative;
   font-size: 1.2em;
   width: 40px;
   height: 40px;
@@ -35,26 +36,30 @@
   text-align: center;
   font-smoothing: antialiased;
 
-  &:before, &:after  {
-    content: "";
+  &::before,
+  &::after  {
     display: block;
+    content: '';
     position: absolute;
     background: transparent;
-    top: 0; bottom: 0; left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border-radius: 50%;
     transition: .3s all;
     visibility: visible;
   }
 
-  &:hover:after{
-    border: 1px solid #fff;
-    -webkit-transform: scale(1.1);
+  &:hover::after {
+    border: 1px solid;
+    transform: scale(1.1);
     visibility: visible;
   }
 
-  &:hover:before{
-    border: 1px solid #fff;
-    -webkit-transform: scale(2);
+  &:hover::before {
+    border: 1px solid;
+    transform: scale(2);
     transition: .3s all;
     opacity: 0;
   }
@@ -80,10 +85,10 @@
   width: 40px;
   height: 40px;
   line-height: 40px;
-  font-size:1.2em;
+  font-size: 1.2em;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   .m-contacts .contact-info {
     margin-bottom: 30px;
   }

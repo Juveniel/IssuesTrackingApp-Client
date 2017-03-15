@@ -1,0 +1,36 @@
+// Navigation
+.dashboard-nav-section {
+  background-color: $db-dark-grey;
+}
+
+.dashboard-nav-section .dashboard-logo a {
+  color: $white;
+}
+
+.dashboard-nav-section .dashboard-logo {
+  background-color: $twitter;
+}
+
+.dashboard-nav-section .dashboard-nav .dashboard-nav-item {
+  border-bottom-color: $db-grey;
+
+  &:hover {
+    background-color: $db-black;
+  }
+}
+
+.dashboard-nav-section .dashboard-nav .dashboard-nav-item a {
+  color: $db-pastel-white;
+}
+
+
+.dashboard-main-section {
+  background-color: $db-light-grey;
+}
+
+.dashboard-main-section .dashboard-header {
+  height: auto;
+  border-bottom-color: $db-white-shadow;
+  color: $db-white-shadow;
+  background-color: $white;
+}

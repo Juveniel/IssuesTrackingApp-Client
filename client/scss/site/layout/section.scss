@@ -58,6 +58,14 @@
   margin-left: -10px;
 }
 
+.home #l-dashboard {
+  display: none;
+}
+
+.home #l-page-content {
+  display: block;
+}
+
 @media only screen and (max-width : 768px) {
   .l-section > .container {
     padding: 50px 15px;

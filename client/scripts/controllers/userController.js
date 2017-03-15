@@ -14,7 +14,7 @@ class UserController {
             .then((result) => {
 
                 if(result.success) {
-                    context.redirect('#/profile');
+                    context.redirect('#/dashboard');
                 }
                 else {
                     this.template.getTemplate('login-template')
@@ -37,7 +37,7 @@ class UserController {
 
                 if (result.success) {
                     localStorage.setItem('auth_token', result.auth_token);
-                    context.redirect('#/home');
+                    context.redirect('#/dashboard');
                 } else {
                     // show error
                 }
@@ -93,5 +93,50 @@ class UserController {
                 context.redirect('#/login');
             });
 
+    }
+
+    renderDashboardOrganizationsTemplate(content, context) {
+        var $content = content;
+
+        this.utils.getLoggedUser()
+            .then((user) => {
+                this.template.getTemplate('admin/dashboard-organizations-template')
+                    .then((resultTemplate) => {
+                        $content.html(resultTemplate);
+                    });
+            })
+            .catch(() => {
+                context.redirect('#/login');
+            });
+    }
+
+    renderDashboardProjectsTemplate(content, context) {
+        var $content = content;
+
+        this.utils.getLoggedUser()
+            .then((user) => {
+                this.template.getTemplate('admin/dashboard-projects-template')
+                    .then((resultTemplate) => {
+                        $content.html(resultTemplate);
+                    });
+            })
+            .catch(() => {
+                context.redirect('#/login');
+            });
+    }
+
+    renderDashboardAccountTemplate(content, context) {
+        var $content = content;
+
+        this.utils.getLoggedUser()
+            .then((user) => {
+                this.template.getTemplate('admin/dashboard-account-template')
+                    .then((resultTemplate) => {
+                        $content.html(resultTemplate);
+                    });
+            })
+            .catch(() => {
+                context.redirect('#/login');
+            });
     }
 }

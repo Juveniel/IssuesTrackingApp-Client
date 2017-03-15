@@ -1,8 +1,11 @@
 // Fonts
 @import 'fonts';
 
+// Colors
+@import 'shared/colors';
+
 // Site
 @import 'site/index';
 
-// Layout
-@import 'site/layout/index';
+// Dashboard
+@import 'dashboard/index';

@@ -1,4 +1,4 @@
-// Colors
+// Dark
 $dark-grey: #1A1C27;
 $medium-black: #1C202D;
 $grey-pastel: #333542;
@@ -8,8 +8,9 @@ $medium-grey: #777;
 $beige: #979797;
 $light-grey: #8798A3;
 $silver: #A1B1BC;
-$white: #FFF;
 
+// Light
+$white: #FFF;
 $sky-blue: #21C2F8;
 $sky-blue-light: #45CDFE;
 $light-blue: #6BC4FE;
@@ -19,15 +20,26 @@ $electric-pink: #FF2361;
 $orange: #FF701A;
 $lime: #B4FF52;
 
+
+// Gradient
 $green-gradient: #18E2BA;
 $blue-gradient: #47d1ff;
 
+// Social
 $facebook: #46629E;
 $twitter: #00ACEE;
 $google: #DD4B39;
 $pinterest: #BD081C;
 
-// Color classes
+// Dashboard
+$db-black: #212329;
+$db-dark-grey: #35373D;
+$db-grey: #4A4B51;
+$db-pastel-white: #B8BBC2;
+$db-light-grey: #EEE;
+$db-white-shadow: #EDEDEE;
+
+// Classes
 .lime {
   color: $lime;
 }

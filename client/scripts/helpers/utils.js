@@ -13,13 +13,6 @@ class Utils {
         return this.requester.get('/api/auth/verify');
     }
 
-    toggleLayoutTransition() {
-        this.checkAuthenticated()
-            .then((result) => {
-                
-            });
-    }
-
     appendBodyClass(bodyClass) {
         $('body').attr('class', '');
         $('body').addClass(bodyClass);

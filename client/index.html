@@ -116,60 +116,62 @@
         </ul>
     </div>
 
-    <main id="l-dashboard">
-        <div class="container-fluid">
-            <div class="row row-offcanvas row-offcanvas-left">
-                <div id="dashboard-nav-section" class="dashboard-nav-section col-xs-12 col-sm-12 col-md-12 column">
-                    <div class="navbar-default">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dashboard-sidebar-nav">
-                            <i class="fa fa-bars"></i>
-                        </button>
+    <div id="content" class="l-content-wrap">
+        <div id="l-dashboard">
+            <div class="container-fluid">
+                <div class="row row-offcanvas row-offcanvas-left">
+                    <div id="dashboard-nav-section" class="dashboard-nav-section col-xs-12 col-sm-12 col-md-12 column">
+                        <div class="navbar-default">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dashboard-sidebar-nav">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                        <h1 class="dashboard-logo">
+                            <a href="#/home">
+                                theSlyfer
+                            </a>
+                        </h1>
+                        <div id="dashboard-sidebar-nav" class="dashboard-nav collapse navbar-collapse" role="navigation">
+                            <ul class="dashboard-nav-list">
+                                <li class="dashboard-nav-item">
+                                    <a href="#/dashboard/organizations">
+                                        <span class="icon icon-chart-column"></span>People & Organizations
+                                    </a>
+                                </li>
+                                <li class="dashboard-nav-item">
+                                    <a href="#/dashboard/projects">
+                                        <span class="icon icon-faves"></span>Project & Issues
+                                    </a>
+                                </li>
+                                <li class="dashboard-nav-item">
+                                    <a href="#/dashboard/account">
+                                        <span class="icon icon-info"></span>Your Account
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <h1 class="dashboard-logo" class="center-block">
-                        <a href="#/home">
-                            theSlyfer Dashboard
-                        </a>
-                    </h1>
-                    <div id="dashboard-sidebar-nav" class="dashboard-nav collapse navbar-collapse" role="navigation">
-                        <ul class="dashboard-nav-list">
-                            <li class="dashboard-nav-item">
-                                <a href="#/dashboard/organizations">
-                                    <span class="icon icon-chart-column"></span>People & Organizations
-                                </a>
-                            </li>
-                            <li class="dashboard-nav-item">
-                                <a href="#/dashboard/projects">
-                                    <span class="icon icon-faves"></span>Project & Issues
-                                </a>
-                            </li>
-                            <li class="dashboard-nav-item">
-                                <a href="#/dashboard/account">
-                                    <span class="icon icon-info"></span>Your Account
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="dashboard-main-section col-xs-12 col-sm-12 column">
-                    <div class="dashboard-header row">
-                        <h2>Control panel</h2>
+                    <div class="dashboard-main-section col-xs-12 col-sm-12 column">
+                        <div class="dashboard-header row">
+                            <h2 id="dashboard-header-pl">Dashboard</h2>
 
-                        <ul class="dashboard-options pull-right">
-                            <li>
-                                <a href="#/logout" data-toggle="tooltip" data-placement="bottom" title="Logout">
-                                    <i class="ion-log-out"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                            <ul class="dashboard-options pull-right">
+                                <li>
+                                    <a href="#/logout" data-toggle="tooltip" data-placement="bottom" title="Logout">
+                                        <i class="ion-log-out"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div id="dashboard-main-content" class="dashboard-content row"></div>
+                        <div id="dashboard-main-content" class="dashboard-content row"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
 
-    <main id="l-page-content" class="content-slide-trigger"></main>
+        <main id="l-page-content" class="content-slide-trigger"></main>
+    </div>
 
     <footer class="l-footer">
         <div class="container">
@@ -202,6 +204,7 @@
 
     <script src="./scripts/controllers/homeController.js"></script>
     <script src="./scripts/controllers/userController.js"></script>
+    <script src="./scripts/controllers/dashboardController.js"></script>
 
     <script src="./scripts/app.js"></script>
     <!-- endbuild -->

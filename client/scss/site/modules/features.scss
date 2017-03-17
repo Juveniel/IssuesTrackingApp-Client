@@ -25,6 +25,7 @@
   width: 100%;
   text-align: center;
 }
+
 .m-key-features .heading h2 {
   font-size: 24px;
   line-height: 30px;
@@ -34,7 +35,7 @@
 }
 
 // Responsive
-@media only screen and (max-width : 1200px) {
+@media only screen and (max-width: 1200px) {
   .m-key-features .feature {
     margin-bottom: 30px;
   }

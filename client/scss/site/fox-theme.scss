@@ -1,10 +1,18 @@
 // Layout
-h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $dark-blue;
+}
+
 
 // Buttons
 .btn-ghost {
   color: $white;
-  background: rgba(0,0,0,0.01);
+  background: $black-opacity-0;
   border-color: $white;
 
   &:hover {
@@ -21,14 +29,15 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   color: $white;
 }
 
+// sass-lint:disable-all
 .btn-gradient.gradient-green-blue {
   color: $white;
-  background: #18e2ba;
+  background: $green-gradient;
   background: -moz-linear-gradient(-45deg, $electric-green 0%, $light-blue 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#18e2ba), color-stop(100%,$light-blue));
-  background: -webkit-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
-  background: -o-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
-  background: -ms-linear-gradient(-45deg, $electric-green 0%,$light-blue 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#18e2ba), color-stop(100%, $light-blue));
+  background: -webkit-linear-gradient(-45deg, $electric-green 0%, $light-blue 100%);
+  background: -o-linear-gradient(-45deg, $electric-green 0%, $light-blue 100%);
+  background: -ms-linear-gradient(-45deg, $electric-green 0%, $light-blue 100%);
   background: linear-gradient(135deg, $electric-green 0%, $light-blue 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#18e2ba", endColorstr="#47d1ff",GradientType=1 );
 
@@ -36,6 +45,7 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
     background: linear-gradient(135deg, $electric-green 0%, $electric-green 100%) !important;
   }
 }
+// sass-lint:enable-all
 
 // Navigation
 .l-header {
@@ -48,6 +58,10 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
 .l-header.opaque-header {
   background: $white;
+}
+
+.l-header.shrinked-header {
+  color: $black-opacity-03;
 }
 
 .l-header.shrinked-header .l-header-nav .l-header-nav-item a,
@@ -80,33 +94,42 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 }
 
 .l-header-account-nav-item.account-btn {
-  border-color: $glass;
-  -moz-border-left-colors: $glass;
-  -moz-border-right-colors: $glass;
+  border-left-color: $glass;
+  border-right-color: $glass;
 }
 
 .l-header-mobile-trigger {
   color: $white;
 }
 
-.l-mobile-menu .mobile-menu-item a{
+.l-mobile-menu .mobile-menu-item a {
   color: $white;
 }
 
-.l-header.shrinked-header .l-header-mobile-trigger{
+.l-header.shrinked-header .l-header-mobile-trigger {
   color: $silver;
+}
+
+.l-mobile-menu .mobile-menu-item {
+  border-top-color: $grey-opacity-05;
+  border-bottom-color: $black-opacity-03;
+}
+
+.l-mobile-menu {
+  background: $medium-black;
 }
 
 // Sections
 .l-section .heading > .border {
-
   border-top-color: $sky-blue;
 }
+
 .l-section .heading > .border.white {
 
   border-top-color: $white;
 }
-.l-section.section-transition .bottom-arrow{
+
+.l-section.section-transition .bottom-arrow {
   background: $sky-blue;
 }
 
@@ -114,6 +137,10 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 .m-slider .slide-title,
 .m-slider .slide-subtitle {
   color: $white;
+}
+
+.m-slider {
+  background-color: $dark-blue;
 }
 
 // Features
@@ -146,6 +173,7 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 .m-customization .showcase-box .heading > h3 {
   color: $white;
 }
+
 .m-customization .showcase-box .description-inner {
   color: $white;
 }
@@ -161,9 +189,14 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 
 // Demo section
 .m-demo {
-  background-image: url("../media/homepage/bg-parallax.jpg");
+  background-image: url('../media/homepage/bg-parallax.jpg');
 }
+
 .m-demo .heading h2 {
+  color: $white;
+}
+
+.m-demo .description p {
   color: $white;
 }
 
@@ -172,7 +205,8 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   background: $sky-blue;
   color: $white;
 }
-.m-contacts-heading .heading h2{
+
+.m-contacts-heading .heading h2 {
   color: $white;
 }
 
@@ -190,6 +224,16 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   color: $white;
 }
 
+.m-contacts .contact-info .social-link {
+  &:hover::after {
+    border-color: $white;
+  }
+
+  &:hover::before {
+    border-color: $white;
+  }
+}
+
 // Footer
 .l-footer {
   border-top: 1px solid $glass;
@@ -201,17 +245,21 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 .m-login .wrapper > .title,
 .m-register .wrapper > .title {
   color: $white;
+  background: $pastel-blue;
 }
+
 .m-login .wrapper > .form,
 .m-register .wrapper > .form {
   background: $dark-grey;
 }
+
 .m-login .form .form-control,
 .m-register .form .form-control {
   background: $grey-pastel;
   color: $beige;
 }
 
+// sass-lint:disable-all
 .m-login ::-webkit-input-placeholder,
 .m-register ::-webkit-input-placeholder {
   color:    $beige;
@@ -230,3 +278,4 @@ h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
 .m-register :-ms-input-placeholder {
   color:    $beige;
 }
+// sass-lint:enable-all

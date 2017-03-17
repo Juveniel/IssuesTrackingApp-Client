@@ -10,6 +10,7 @@ files:
     - 'sass/vendor/**/*.*'
 # Rule Configuration
 rules:
+  force-pseudo-nesting: 0
   force-element-nesting: 0
   no-transition-all: 0
   extends-before-mixins: 2
@@ -43,6 +44,3 @@ rules:
       ignore-custom-properties: true
   variable-for-property:
     - 2
-    -
-      properties:
-        - content

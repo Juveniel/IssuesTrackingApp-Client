@@ -89,6 +89,18 @@
             dashboardController.createOrganization($dashboardContent, context);
         });
 
+        this.get('#/dashboard/organizations/:id/add', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardAddOrganizationMemberTemplate($dashboardContent, context);
+        });
+
+        this.post('#/dashboard/organizations/:id/add', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.addOrganizationMember($dashboardContent, context);
+        });
+
         this.get('#/dashboard/projects', function (context) {
             utils.appendBodyClass('dashboard');
 

@@ -4,28 +4,43 @@
     <div class="list">
         <table class="table">
             <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-            </tr>
+                <tr>
+                    <th>Organization</th>
+                    <th>Person</th>
+                    <th>Role</th>
+                    <th>Email & Delivery status</th>
+                    <th>Projects</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+                {{#each organizations}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{_creator.username}}</td>
+                        <td>{{_creator.role}}</td>
+                        <td>{{_creator.email}}</td>
+                        <td></td>
+                    </tr>
+                    {{#each members}}
+                        <tr>
+                            <td></td>
+                            <td>{{username}}</td>
+                            <td>{{role}}</td>
+                            <td>{{email}}</td>
+                            <td></td>
+                        </tr>
+                    {{/each}}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <a href="#/dashboard/organizations/{{_id}}/add">
+                                <i class="ion-person-add"></i>
+                                Add user
+                            </a>
+                        </td>
+                        <td colspan="3"></td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="heading">
+        <h2>
+            <i class="ion-person"></i>
+            Add new organization member
+        </h2>
+    </div>
+
+    <form class="form"  method="post" action="#/dashboard/organizations/{{organizationId}}/add">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" />
+        </div>
+        <div class="form-group">
+            Password will be automatically generateds
+        </div>
+
+        <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create & Send Email">
+    </form>
+</div>

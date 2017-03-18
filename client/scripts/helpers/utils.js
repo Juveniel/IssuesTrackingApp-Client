@@ -17,4 +17,14 @@ class Utils {
         $('body').attr('class', '');
         $('body').addClass(bodyClass);
     }
+
+    displayErrorsList(errorsPlaceholder, placeholderList, errors) {
+        placeholderList.html('');
+        
+        $.each(errors, function(i, err) {
+            placeholderList.append('<li>' + err + '</li>');
+        });
+
+        errorsPlaceholder.show();
+    }
 }

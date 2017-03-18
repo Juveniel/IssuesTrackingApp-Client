@@ -82,13 +82,10 @@ class UserController {
                     errorsPlaceholderList.html('');
                     context.redirect('#/login');
                 } else {
-                    errorsPlaceholderList.html('');
-
-                    $.each(result.validationErrors, function(i, err) {
-                        errorsPlaceholderList.append('<li>' + err + '</li>');
-                    });
-
-                    errorsPlaceholder.show();
+                    this.utils.displayErrorsList(
+                        errorsPlaceholder,
+                        errorsPlaceholderList,
+                        result.validationErrors);
                 }
             });
     }

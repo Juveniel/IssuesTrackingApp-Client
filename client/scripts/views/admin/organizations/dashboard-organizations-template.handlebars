@@ -15,7 +15,10 @@
             <tbody>
                 {{#each organizations}}
                     <tr>
-                        <td>{{name}}</td>
+                        <td>
+                            <i class="fa fa-building-o"></i>
+                            {{name}}
+                        </td>
                         <td>{{_creator.username}}</td>
                         <td>{{_creator.role}}</td>
                         <td>{{_creator.email}}</td>
@@ -33,10 +36,13 @@
                     <tr>
                         <td></td>
                         <td>
-                            <a href="#/dashboard/organizations/{{_id}}/add">
-                                <i class="ion-person-add"></i>
-                                Add user
-                            </a>
+                            {{#ifCond ../user.role "admin"}}
+                                <a href="#/dashboard/organizations/{{_id}}/add">
+                                    <i class="ion-person-add"></i>
+                                    Add user
+                                </a>
+                            {{/ifCond}}
+
                         </td>
                         <td colspan="3"></td>
                     </tr>
@@ -45,8 +51,10 @@
         </table>
     </div>
 
-    <a href="#/dashboard/organizations/new">
-        <i class="ion-plus"></i>
-        Add new organization
-    </a>
+    {{#ifCond user.role "admin"}}
+        <a href="#/dashboard/organizations/new">
+            <i class="ion-plus"></i>
+            Add new organization
+        </a>
+    {{/ifCond}}
 </div>

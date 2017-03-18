@@ -19,13 +19,14 @@ class DashboardController {
     renderDashboardOrganizationsTemplate(content, context) {
         var $content = content,
             $header = $('#dashboard-header-pl'),
-            $organizations;
+            $organizations,
+            $loggedUser;
 
         this.utils.getLoggedUser()
             .then((result) => {
-                var userId = result.user._id;
+                $loggedUser = result.user;
 
-                return this.requester.get('/api/organizations/list', userId);
+                return this.requester.get('/api/organizations/list', $loggedUser._id);
             })
             .then((organizationsData) => {
                 $organizations = organizationsData;
@@ -33,10 +34,8 @@ class DashboardController {
                 return this.template.getTemplate('admin/organizations/dashboard-organizations-template');
             })
             .then((resultTemplate) => {
-
                 $header.html('Organizations & People');
-                console.log($organizations);
-                $content.html(resultTemplate({organizations: $organizations}));
+                $content.html(resultTemplate({organizations: $organizations, user: $loggedUser}));
             });
     }
 
@@ -53,7 +52,9 @@ class DashboardController {
 
     createOrganization(content, context) {
         var $content = content,
-            data = context.params;
+            data = context.params,
+            errorsPlaceholder = $('#new-org-form-errors'),
+            errorsPlaceholderList = $('#new-org-form-errors-list');
 
             this.utils.getLoggedUser()
                 .then((result) => {
@@ -65,11 +66,15 @@ class DashboardController {
                      this.requester.post('/api/organizations/create', org)
                          .then((result) => {
                              if(result.success) {
+                                 errorsPlaceholderList.html('');
                                  toastr.success(result.message);
                                  context.redirect('#/dashboard/organizations');
                              }
                              else {
-                                 // err
+                                 this.utils.displayErrorsList(
+                                     errorsPlaceholder,
+                                     errorsPlaceholderList,
+                                     result.validationErrors);
                              }
                          });
 

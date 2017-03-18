@@ -26,15 +26,20 @@
         <div class="members row">
             <form class="form" method="post" action="#/dashboard/projects/{{projectId}}/members/add">
                 {{#each organization.members}}
-
-                        <div class="form-group">
-                            <label>{{username}}</label>
-                            <input class="checkbox" type="checkbox" name="members" value="{{_id}}" />
-                        </div>
-
+                    <div class="form-group">
+                        <label>{{username}}</label>
+                        <input class="checkbox"
+                               type="checkbox"
+                               name="members"
+                               value="{{_id}}"
+                               {{#inArray ../project.members _id }}checked{{/inArray}}
+                        />
+                    </div>
                 {{/each}}
 
-                <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Add members">
+                <input type="submit"
+                       class="btn-gradient btn-gradient-lg gradient-green-blue"
+                       value="Add/Remove members from the project">
             </form>
         </div>
     </div>

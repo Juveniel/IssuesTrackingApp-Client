@@ -7,6 +7,18 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
     return options.inverse(this);
 });
 
+Handlebars.registerHelper('inArray', function(collection, id, options) {
+    var collectionLength = collection.length;
+
+    for (var i = 0; i < collectionLength; i++) {
+        if (collection[i]._id == id) {
+            return options.fn(this);
+        }
+    }
+
+    return options.inverse(this);
+});
+
 class HandlebarsTemplate {
     constructor(){
         this.cache = {};

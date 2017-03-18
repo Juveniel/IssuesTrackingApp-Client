@@ -204,6 +204,7 @@ class DashboardController {
             $header = $('#dashboard-header-pl'),
             projectId = context.params['id'],
             $organization,
+            $project,
             $loggedUser;
 
         this.utils.getLoggedUser()
@@ -214,12 +215,18 @@ class DashboardController {
             })
             .then((result) => {
                 $organization = result.organization;
+                $project = result.project;
 
                 return this.template.getTemplate('admin/projects/dashboard-project-settings-template');
             })
             .then((resultTemplate) => {
                 $header.html('Project settings');
-                $content.html(resultTemplate({ projectId: projectId, organization: $organization, user: $loggedUser }));
+                $content.html(resultTemplate({
+                    projectId: projectId,
+                    organization: $organization,
+                    project: $project,
+                    user: $loggedUser
+                }));
             });
     }
 

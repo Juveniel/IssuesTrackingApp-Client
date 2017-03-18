@@ -72,7 +72,8 @@
 
             dashboardController.renderDashboardTemplate($dashboardContent, context);
         });
-
+        
+        // Dashboard Organizations
         this.get('#/dashboard/organizations', function (context) {
             utils.appendBodyClass('dashboard');
 
@@ -100,11 +101,24 @@
 
             dashboardController.addOrganizationMember($dashboardContent, context);
         });
-
+        
+        // Dashboard Projects
         this.get('#/dashboard/projects', function (context) {
             utils.appendBodyClass('dashboard');
 
             dashboardController.renderDashboardProjectsTemplate($dashboardContent, context);
+        });
+
+        this.get('#/dashboard/projects/new', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardNewProjectTemplate($dashboardContent, context);
+        });
+
+        this.post('#/dashboard/projects/new', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.addNewProject($dashboardContent, context);
         });
 
         this.get('#/dashboard/account', function (context) {

@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="heading">
+        <h2>
+            <i class="ion-folder"></i>
+            Setup a new project
+        </h2>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="new-project-form-wrapper pull-left col-sm-6">
+            <div id="new-proj-form-errors" class="auth-error-block alert alert-danger">
+                <strong>The following errors occurred:</strong>
+                <ul id="new-proj-form-errors-list"></ul>
+            </div>
+
+            <form class="form"  method="post" action="#/dashboard/projects/new">
+                <div class="form-group">
+                    <label for="name">Project name:</label>
+                    <input type="text" class="form-control" name="name" id="name"/>
+                </div>
+                <div class="form-group">
+                    <label for="organization">File this project under..</label>
+                    <select class="form-group" name="organization" id="organization">
+                        {{#each organizations}}
+                            <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <a href="#/dashboard/organizations/new">Need to setup a new organiaztion?</a>
+                </div>
+                <div class="form-group">
+                    <p>
+                        Grouping projects by Organization helps everyone distinguish between projects.
+                        For example, if you have multiple "Web Site" projects, the organization name
+                        helps you know one from the other.
+                    </p>
+                </div>
+
+                <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create this Project">
+            </form>
+        </div>
+        <div class="info-bubble col-sm-6">
+            <div class="wrapper">
+                <h3>
+                    <i class="ion-ios-list"></i>
+                    Get the most out of projects.
+                </h3>
+                <p>
+                    Projects are the primary way to group issues. Projects can each have their unique set of
+                    participants, categories, and milestones.
+                </p>
+                <p>
+                    While many companies can participate in a project, you'll need to choose the primary company
+                    associated with that project for organizational purposes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

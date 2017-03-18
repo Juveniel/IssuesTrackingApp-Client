@@ -125,11 +125,66 @@ class DashboardController {
         var $content = content,
             $header = $('#dashboard-header-pl');
 
-            this.template.getTemplate('admin/dashboard-projects-template')
+            this.template.getTemplate('admin/projects/dashboard-projects-template')
                 .then((resultTemplate) => {
                     $header.html('Projects & Issues');
                     $content.html(resultTemplate);
                 });
+    }
+
+    renderDashboardNewProjectTemplate(content, context) {
+        var $content = content,
+            $header = $('#dashboard-header-pl'),
+            $organizations,
+            $loggedUser;
+
+        this.utils.getLoggedUser()
+            .then((result) => {
+                $loggedUser = result.user;
+
+                return this.requester.get('/api/organizations/list', $loggedUser._id);
+            })
+            .then((organizationsData) => {
+                $organizations = organizationsData;
+
+                return this.template.getTemplate('admin/projects/dashboard-new-project-template');
+            })
+            .then((resultTemplate) => {
+                $header.html('New project');
+                $content.html(resultTemplate({organizations: $organizations, user: $loggedUser}));
+            });
+    }
+
+    addNewProject(content, context) {
+        var $content = content,
+            data = context.params,
+            errorsPlaceholder = $('#new-proj-form-errors'),
+            errorsPlaceholderList = $('#new-proj-form-errors-list');
+
+        this.utils.getLoggedUser()
+            .then((result) => {
+                var project = {
+                    name: data.name,
+                    organization: data.organization,
+                    _creator: result.user._id
+                };
+
+                this.requester.post('/api/projects/create', project)
+                    .then((result) => {
+                        if(result.success) {
+                            errorsPlaceholderList.html('');
+                            toastr.success(result.message);
+                            context.redirect('#/dashboard/projects');
+                        }
+                        else {
+                            this.utils.displayErrorsList(
+                                errorsPlaceholder,
+                                errorsPlaceholderList,
+                                result.validationErrors);
+                        }
+                    });
+
+            });
     }
 
     renderDashboardAccountTemplate(content, context) {

@@ -4,16 +4,47 @@
     <div class="list">
         <table class="table">
             <tbody>
-                <tr>
-                    <td>testproj</td>
-                    <td></td>
-                </tr>
+                {{#each projects}}
+                    <tr>
+                        <td class="name">
+                            <strong>{{organization.name}}</strong>
+                            {{name}}
+                        </td>
+                        <td class="icon">
+                            <a href="#/dashboard/projects/{{_id}}/issues/new" data-toggle="tooltip" title="New issue">
+                                <i class="ion-plus"></i>
+                            </a>
+                        </td>
+                        <td class="icon">
+                            <a href="#/dashboard/projects/{{_id}}/milestones/new" data-toggle="tooltip" title="Milestones">
+                                <i class="ion-calendar"></i>
+                            </a>
+                        </td>
+                        <td class="icon">
+                            <a href="#/dashboard/projects/{{_id}}/settings" data-toggle="tooltip" title="Settings">
+                                <i class="ion-ios-cog-outline"></i>
+                            </a>
+                        </td>
+                        <td class="count">
+                            <a href="#/dashboard/projects/issues/open">
+                                0
+                            </a>
+                        </td>
+                        <td class="count">
+                            <a href="#/dashboard/projects/issues/resolved">
+                                0
+                            </a>
+                        </td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
 
-    <a href="#/dashboard/projects/new">
-        <i class="ion-plus"></i>
-        Add new project
-    </a>
+    {{#ifCond user.role "admin"}}
+        <a href="#/dashboard/projects/new">
+            <i class="ion-plus"></i>
+            Add new project
+        </a>
+    {{/ifCond}}
 </div>

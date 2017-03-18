@@ -121,6 +121,18 @@
             dashboardController.addNewProject($dashboardContent, context);
         });
 
+        this.get('#/dashboard/projects/:id/settings', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardProjectSettingsTemplate($dashboardContent, context);
+        });
+
+        this.post('#/dashboard/projects/:id/categories/add', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.addCategoryToProject($dashboardContent, context);
+        });
+
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');
 

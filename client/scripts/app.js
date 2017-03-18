@@ -133,6 +133,12 @@
             dashboardController.addCategoryToProject($dashboardContent, context);
         });
 
+        this.post('#/dashboard/projects/:id/members/add', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.addMembersToProject($dashboardContent, context);
+        });
+
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');
 

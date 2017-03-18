@@ -202,12 +202,24 @@ class DashboardController {
     renderDashboardProjectSettingsTemplate(content, context) {
         var $content = content,
             $header = $('#dashboard-header-pl'),
-            projectId = context.params['id'];
+            projectId = context.params['id'],
+            $organization,
+            $loggedUser;
 
-        this.template.getTemplate('admin/projects/dashboard-project-settings-template')
+        this.utils.getLoggedUser()
+            .then((result) => {
+                $loggedUser = result.user;
+
+                return this.requester.get(`/api/projects/${projectId}/users`, $loggedUser._id);
+            })
+            .then((result) => {
+                $organization = result.organization;
+
+                return this.template.getTemplate('admin/projects/dashboard-project-settings-template');
+            })
             .then((resultTemplate) => {
                 $header.html('Project settings');
-                $content.html(resultTemplate({ projectId: projectId }));
+                $content.html(resultTemplate({ projectId: projectId, organization: $organization, user: $loggedUser }));
             });
     }
 
@@ -243,6 +255,51 @@ class DashboardController {
             });
     }
 
+    addMembersToProject(content, context) {
+        var errorsPlaceholder = $('#new-proj-member-form-errors'),
+            errorsPlaceholderList = $('#new-proj-member-form-errors-list'),
+            data = context.params,
+            projectId = data['id'];
+        
+        /* Get values for delete */
+        var uncheckedItems = $(".checkbox:checkbox:not(:checked)"),
+            checkedItems = $(".checkbox:checked"),
+            deleteArray = [],
+            newArray = [];
+
+        uncheckedItems.each(function() {
+            deleteArray.push(this.value);
+        });
+
+        checkedItems.each(function() {
+            newArray.push(this.value);
+        });
+
+        var members = {
+            forDelete: deleteArray,
+            newMembers: newArray
+        };
+
+        this.utils.getLoggedUser()
+            .then((result) => {
+
+                this.requester.post(`/api/projects/${projectId}/members/add`, members)
+                    .then((result) => {
+                        if(result.success) {
+                            errorsPlaceholderList.html('');
+                            toastr.success(result.message);
+                            context.redirect('#/dashboard/projects');
+                        }
+                        else {
+                            this.utils.displayErrorsList(
+                                errorsPlaceholder,
+                                errorsPlaceholderList,
+                                result.validationErrors);
+                        }
+                    });
+
+            });
+    }
 
     renderDashboardAccountTemplate(content, context) {
         var $content = content,

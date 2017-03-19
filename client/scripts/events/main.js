@@ -1,4 +1,4 @@
-
+/* Page scroll */
 $(function () {
     $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this),
@@ -12,7 +12,7 @@ $(function () {
     });
 });
 
-
+/* Opacity scroll */
 $(window).scroll(function() {
     var st = $(this).scrollTop();
 
@@ -111,6 +111,7 @@ $(function() {
     });
 });
 
+/* Bootstrap tooltips */
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });

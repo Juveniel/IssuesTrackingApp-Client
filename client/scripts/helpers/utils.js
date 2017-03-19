@@ -27,4 +27,20 @@ class Utils {
 
         errorsPlaceholder.show();
     }
+
+    validateRecaptcha(errorElement) {
+        let v = grecaptcha.getResponse(),
+            $errorDiv = $('#' + errorElement);
+        
+        if(v.length == 0)
+        {
+            $errorDiv.html('You must not leave Captcha Code empty');
+            return false;
+        }
+        else
+        {
+            $errorDiv.html('Captcha completed');
+            return true;
+        }
+    }
 }

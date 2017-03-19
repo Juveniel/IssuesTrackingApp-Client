@@ -11,7 +11,7 @@
         let template = new HandlebarsTemplate();
         let utils = new Utils(requester);
 
-        let homeController = new HomeController(requester, template),
+        let homeController = new HomeController(requester, template, utils),
             userController = new UserController(requester, template, utils),
             dashboardController = new DashboardController(requester, template, utils),
             dashboardOrganizationsController = new DashboardOrganizationsController(requester, template, utils),
@@ -19,7 +19,7 @@
             dashboardIssuesController = new DashboardIssuesController(requester, template, utils);
 
         // Check Authentication
-        this.before({ except: { path: ['#/', '#/home', '#/login', '#/register'] } }, context => {
+        this.before({ except: { path: ['#/', '#/home', '#/login', '#/register', '#/home/contact'] } }, context => {
             utils.checkAuthenticated()
                 .then((result) => {
                     if(!result.success) {
@@ -38,6 +38,12 @@
             utils.appendBodyClass('home');
 
             homeController.renderHomeTemplate($content, context);
+        });
+
+        this.post('#/home/contact', function (context) {
+            utils.appendBodyClass('home');
+
+            homeController.sendContactMail($content, context);
         });
 
         this.get(/#\/home(#.+)?/, function() {

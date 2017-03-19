@@ -6,14 +6,17 @@
         </h2>
     </div>
 
-    <div id="new-org-form-errors" class="auth-error-block alert alert-danger">
-        <strong>The following errors occurred:</strong>
-        <ul id="new-org-form-errors-list"></ul>
-    </div>
+    <form class="form organization"  method="post" action="#/dashboard/organizations/new">
+        <div id="new-org-form-errors" class="auth-error-block alert alert-danger">
+            <strong>The following errors occurred:</strong>
+            <ul id="new-org-form-errors-list"></ul>
+        </div>
 
-    <form class="form"  method="post" action="#/dashboard/organizations/new">
-        <input type="text" class="form-control" name="name" />
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" />
+        </div>
 
-        <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create">
+        <input type="submit" class="btn btn-info full-width" value="Create">
     </form>
 </div>

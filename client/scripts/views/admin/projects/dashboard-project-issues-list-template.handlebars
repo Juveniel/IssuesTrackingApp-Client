@@ -7,10 +7,13 @@
     </div>
 
     <div class="content-wrapper">
-        <div class="issues-list col-sm-6">
+        <div class="issues-list col-sm-12">
             {{#each project.issues}}
+                <div class="header">
+
+                </div>
                 <div class="row">
-                    <div class="index">#{{@index}}</div>
+                    <div class="index">#<strong>{{@index}}</strong></div>
                     <div class="name">
                         <a href="#/dashboard/projects/{{../project._id}}/issues/{{_id}}">
                             {{name}}
@@ -30,9 +33,6 @@
                 No issues for this project at the moment.
                 <a href="#/dashboard/projects/{{project._id}}/issues/new">Add new issue</a>
             {{/each}}
-        </div>
-        <div class="filter col-sm-6">
-
         </div>
     </div>
 </div>

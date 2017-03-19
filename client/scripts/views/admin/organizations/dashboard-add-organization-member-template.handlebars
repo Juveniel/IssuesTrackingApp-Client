@@ -6,7 +6,12 @@
         </h2>
     </div>
 
-    <form class="form"  method="post" action="#/dashboard/organizations/{{organizationId}}/add">
+    <form class="form organization"  method="post" action="#/dashboard/organizations/{{organizationId}}/add">
+        <div id="new-org-member-form-errors" class="auth-error-block alert alert-danger">
+            <strong>The following errors occurred:</strong>
+            <ul id="new-org-member-form-errors-list"></ul>
+        </div>
+
         <div class="form-group">
             <label>Username</label>
             <input type="text" class="form-control" name="username" />
@@ -16,9 +21,9 @@
             <input type="text" class="form-control" name="email" />
         </div>
         <div class="form-group">
-            Password will be automatically generateds
+            Password will be automatically generated
         </div>
 
-        <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create & Send Email">
+        <input type="submit" class="btn btn-info full-width" value="Create & Send Email">
     </form>
 </div>

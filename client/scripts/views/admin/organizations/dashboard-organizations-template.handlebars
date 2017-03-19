@@ -28,14 +28,13 @@
                             <td>{{username}}</td>
                             <td>{{role}}</td>
                             <td>{{email}}</td>
-                            <td></td>
                         </tr>
                     {{/each}}
                     <tr>
                         <td></td>
                         <td>
                             {{#ifCond ../user.role "admin"}}
-                                <a href="#/dashboard/organizations/{{_id}}/add">
+                                <a class="btn btn-info" href="#/dashboard/organizations/{{_id}}/add">
                                     <i class="ion-person-add"></i>
                                     Add user
                                 </a>
@@ -50,7 +49,7 @@
     </div>
 
     {{#ifCond user.role "admin"}}
-        <a href="#/dashboard/organizations/new">
+        <a class="btn btn-info full-width" href="#/dashboard/organizations/new">
             <i class="ion-plus"></i>
             Add new organization
         </a>

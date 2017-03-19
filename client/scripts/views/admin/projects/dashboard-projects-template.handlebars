@@ -1,38 +1,60 @@
 <div class="container-fluid">
     <h2>Projects List</h2>
 
-    <div class="list">
+    <div class="projects-list">
         <table class="table">
+            <thead>
+                <tr>
+                    <th>Project name</th>
+                    <th class="icon" colspan="3">Options</th>
+                    <th class="count">Opened</th>
+                    <th class="count">Resolved</th>
+                </tr>
+            </thead>
             <tbody>
                 {{#each projects}}
                     <tr>
-                        <td class="name">
-                            <strong>{{organization.name}}</strong>
+                        <td class="name col-sm-7">
+                            <strong>{{organization.name}}</strong><br>
                             <a href="#/dashboard/projects/{{_id}}/issues/list">{{name}}</a>
                         </td>
-                        <td class="icon">
-                            <a href="#/dashboard/projects/{{_id}}/issues/new" data-toggle="tooltip" title="New issue">
+                        <td class="icon col-sm-1">
+                            <br>
+                            <a class="btn btn-success"
+                               href="#/dashboard/projects/{{_id}}/issues/new"
+                               data-toggle="tooltip"
+                               title="New issue">
                                 <i class="ion-plus"></i>
                             </a>
                         </td>
-                        <td class="icon">
-                            <a href="#/dashboard/projects/{{_id}}/milestones/new" data-toggle="tooltip" title="Milestones">
+                        <td class="icon col-sm-1">
+                            <br>
+                            <a class="btn btn-warning"
+                               href="#/dashboard/projects/{{_id}}/milestones/new"
+                               data-toggle="tooltip"
+                               data-original-title="Milestones">
                                 <i class="ion-calendar"></i>
                             </a>
                         </td>
                         {{#ifCond ../user.role "admin"}}
-                            <td class="icon">
-                                <a href="#/dashboard/projects/{{_id}}/settings" data-toggle="tooltip" title="Settings">
+                            <td class="icon col-sm-1">
+                                <br>
+                                <a class="btn btn-info"
+                                   href="#/dashboard/projects/{{_id}}/settings"
+                                   data-toggle="tooltip"
+                                   title="Settings">
                                     <i class="ion-ios-cog-outline"></i>
                                 </a>
                             </td>
                         {{/ifCond}}
-                        <td class="count">
+                        <td class="count col-sm-1">
+                            <br>
                             <a href="#/dashboard/projects/issues/open">
                                 {{#countStatusInArray issues "Open" }}{{/countStatusInArray}}
                             </a>
                         </td>
-                        <td class="count">
+                        <td class="count col-sm-1">
+                            <br>
                             <a href="#/dashboard/projects/issues/resolved">
                                 {{#countStatusInArray issues "Resolved" }}{{/countStatusInArray}}
                             </a>
@@ -44,7 +66,7 @@
     </div>
 
     {{#ifCond user.role "admin"}}
-        <a href="#/dashboard/projects/new">
+        <a class="btn btn-info full-width" href="#/dashboard/projects/new">
             <i class="ion-plus"></i>
             Add new project
         </a>

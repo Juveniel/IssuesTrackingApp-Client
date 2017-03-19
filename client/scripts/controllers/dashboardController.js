@@ -97,7 +97,9 @@ class DashboardController {
 
     addOrganizationMember(content, context) {
         var $content = content,
-            data = context.params;
+            data = context.params,
+            errorsPlaceholder = $('#new-org-member-form-errors'),
+            errorsPlaceholderList = $('#new-org-member-form-errors-list');
 
         this.utils.getLoggedUser()
             .then((result) => {
@@ -114,7 +116,10 @@ class DashboardController {
                             context.redirect('#/dashboard/organizations');
                         }
                         else {
-                            // err
+                            this.utils.displayErrorsList(
+                                errorsPlaceholder,
+                                errorsPlaceholderList,
+                                result.validationErrors);
                         }
                     });
 
@@ -295,7 +300,6 @@ class DashboardController {
                         if(result.success) {
                             errorsPlaceholderList.html('');
                             toastr.success(result.message);
-                            context.redirect('#/dashboard/projects');
                         }
                         else {
                             this.utils.displayErrorsList(

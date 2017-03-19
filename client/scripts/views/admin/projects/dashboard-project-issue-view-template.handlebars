@@ -6,12 +6,12 @@
         </h2>
     </div>
 
-    <div class="content-wrapper">
-        <div id="upd-proj-issue-form-errors" class="auth-error-block alert alert-danger">
-            <strong>The following errors occurred:</strong>
-            <ul id="upd-proj-issue-form-errors-list"></ul>
-        </div>
+    <div class="content-wrapper issues">
         <form method="post" action="#/dashboard/issues/{{issueId}}" class="form">
+            <div id="upd-proj-issue-form-errors" class="auth-error-block alert alert-danger">
+                <strong>The following errors occurred:</strong>
+                <ul id="upd-proj-issue-form-errors-list"></ul>
+            </div>
             <div class="left col-sm-6">
                 <div class="form-group">
                     <label>Status:</label>
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Update Issue">
+            <input type="submit" class="btn btn-info full-width" value="Update Issue">
         </form>
     </div>
 </div>

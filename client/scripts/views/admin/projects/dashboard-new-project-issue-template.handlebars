@@ -6,12 +6,12 @@
         </h2>
     </div>
 
-    <div class="content-wrapper">
-        <div id="new-proj-issue-form-errors" class="auth-error-block alert alert-danger">
-            <strong>The following errors occurred:</strong>
-            <ul id="new-proj-issue-form-errors-list"></ul>
-        </div>
+    <div class="content-wrapper issues">
         <form method="post" action="#/dashboard/projects/{{projectId}}/issues/new" class="form">
+            <div id="new-proj-issue-form-errors" class="auth-error-block alert alert-danger">
+                <strong>The following errors occurred:</strong>
+                <ul id="new-proj-issue-form-errors-list"></ul>
+            </div>
             <div class="left col-sm-6">
                 <div class="form-group">
                     <label for="name">Subject<span>(Required)</span></label>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create Issue">
+            <input type="submit" class="btn btn-info full-width" value="Create Issue">
         </form>
     </div>
 </div>

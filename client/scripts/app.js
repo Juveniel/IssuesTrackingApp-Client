@@ -144,8 +144,13 @@
 
             dashboardController.renderDashboardNewProjectIssueTemplate($dashboardContent, context);
         });
-        
 
+        this.post('#/dashboard/projects/:id/issues/new', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.createNewProjectIssue($dashboardContent, context);
+        });
+        
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');
 

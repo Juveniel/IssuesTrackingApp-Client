@@ -339,6 +339,33 @@ class DashboardController {
             });
     }
 
+    createNewProjectIssue(content, context) {
+        var $content = content,
+            data = context.params,
+            errorsPlaceholder = $('#new-proj-issue-form-errors'),
+            errorsPlaceholderList = $('#new-proj-issue-form-errors-list');
+
+        this.utils.getLoggedUser()
+            .then((result) => {
+
+                this.requester.post('/api/projects/:id/issues/create', data)
+                    .then((result) => {
+                        if(result.success) {
+                            errorsPlaceholderList.html('');
+                            toastr.success(result.message);
+                            context.redirect('#/dashboard/projects');
+                        }
+                        else {
+                            this.utils.displayErrorsList(
+                                errorsPlaceholder,
+                                errorsPlaceholderList,
+                                result.validationErrors);
+                        }
+                    });
+
+            });
+    }
+
     renderDashboardAccountTemplate(content, context) {
         var $content = content,
             $header = $('#dashboard-header-pl');

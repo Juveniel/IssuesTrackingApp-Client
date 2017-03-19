@@ -139,6 +139,13 @@
             dashboardController.addMembersToProject($dashboardContent, context);
         });
 
+        this.get('#/dashboard/projects/:id/issues/new', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardNewProjectIssueTemplate($dashboardContent, context);
+        });
+        
+
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');
 

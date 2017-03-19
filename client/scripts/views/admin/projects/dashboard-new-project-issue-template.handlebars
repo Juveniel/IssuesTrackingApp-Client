@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="heading">
+        <h2>
+            <i class="ion-folder"></i>
+            Setup a new issue
+        </h2>
+    </div>
+
+    <div class="content-wrapper">
+        <form method="post" action="#/dashboard/projects/{{projectId}}/issues/new" class="form">
+            <div class="left col-sm-6">
+                <div class="form-group">
+                    <label for="name">Subject<span>(Required)</span></label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div class="form-group">
+                    <label for="description">Describe the issue<span>(Required)</span></label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+            </div>
+            <div class="right col-sm-6">
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        {{#each priorities}}
+                            <option value="{{this.value}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="assignee">Assignee</label>
+                    <select name="assignee" id="assignee">
+                        <option value="{{_creator._id}}">Me</option>
+                        {{#each project.members}}
+                            <option value="{{_id}}">{{username}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        {{#each project.categories}}
+                            <option value="{{_id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Create Issue">
+        </form>
+    </div>
+</div>

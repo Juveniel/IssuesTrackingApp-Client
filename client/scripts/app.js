@@ -13,7 +13,10 @@
 
         let homeController = new HomeController(requester, template),
             userController = new UserController(requester, template, utils),
-            dashboardController = new DashboardController(requester, template, utils);
+            dashboardController = new DashboardController(requester, template, utils),
+            dashboardOrganizationsController = new DashboardOrganizationsController(requester, template, utils),
+            dashboardProjectsController = new DashboardProjectsController(requester, template, utils),
+            dashboardIssuesController = new DashboardIssuesController(requester, template, utils);
 
         // Check Authentication
         this.before({ except: { path: ['#/', '#/home', '#/login', '#/register'] } }, context => {
@@ -77,99 +80,100 @@
         this.get('#/dashboard/organizations', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardOrganizationsTemplate($dashboardContent, context);
+            dashboardOrganizationsController.renderDashboardOrganizationsTemplate($dashboardContent, context);
         });
 
         this.get('#/dashboard/organizations/new', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardNewOrganizationTemplate($dashboardContent, context);
+            dashboardOrganizationsController.renderDashboardNewOrganizationTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/organizations/new', function (context) {
-            dashboardController.createOrganization($dashboardContent, context);
+            dashboardOrganizationsController.createOrganization($dashboardContent, context);
         });
 
         this.get('#/dashboard/organizations/:id/add', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardAddOrganizationMemberTemplate($dashboardContent, context);
+            dashboardOrganizationsController.renderDashboardAddOrganizationMemberTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/organizations/:id/add', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.addOrganizationMember($dashboardContent, context);
+            dashboardOrganizationsController.addOrganizationMember($dashboardContent, context);
         });
         
         // Dashboard Projects
         this.get('#/dashboard/projects', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardProjectsTemplate($dashboardContent, context);
+            dashboardProjectsController.renderDashboardProjectsTemplate($dashboardContent, context);
         });
 
         this.get('#/dashboard/projects/new', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardNewProjectTemplate($dashboardContent, context);
+            dashboardProjectsController.renderDashboardNewProjectTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/projects/new', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.addNewProject($dashboardContent, context);
+            dashboardProjectsController.addNewProject($dashboardContent, context);
         });
 
         this.get('#/dashboard/projects/:id/settings', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardProjectSettingsTemplate($dashboardContent, context);
+            dashboardProjectsController.renderDashboardProjectSettingsTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/projects/:id/categories/add', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.addCategoryToProject($dashboardContent, context);
+            dashboardProjectsController.addCategoryToProject($dashboardContent, context);
         });
 
         this.post('#/dashboard/projects/:id/members/add', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.addMembersToProject($dashboardContent, context);
+            dashboardProjectsController.addMembersToProject($dashboardContent, context);
         });
 
+        // Dashboard Issues
         this.get('#/dashboard/projects/:id/issues/new', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardNewProjectIssueTemplate($dashboardContent, context);
+            dashboardIssuesController.renderDashboardNewProjectIssueTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/projects/:id/issues/new', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.createNewProjectIssue($dashboardContent, context);
+            dashboardIssuesController.createNewProjectIssue($dashboardContent, context);
         });
 
         this.get('#/dashboard/projects/:id/issues/list', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardProjectIssuesListTemplate($dashboardContent, context);
+            dashboardIssuesController.renderDashboardProjectIssuesListTemplate($dashboardContent, context);
         });
 
         this.get('#/dashboard/projects/:id/issues/:issueId', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.renderDashboardIssuesViewTemplate($dashboardContent, context);
+            dashboardIssuesController.renderDashboardIssuesViewTemplate($dashboardContent, context);
         });
 
         this.post('#/dashboard/issues/:issueId', function (context) {
             utils.appendBodyClass('dashboard');
 
-            dashboardController.updateIssue($dashboardContent, context);
+            dashboardIssuesController.updateIssue($dashboardContent, context);
         });
         
-        
+        // Dashboard Account
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');
 

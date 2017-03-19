@@ -156,6 +156,19 @@
 
             dashboardController.renderDashboardProjectIssuesListTemplate($dashboardContent, context);
         });
+
+        this.get('#/dashboard/projects/:id/issues/:issueId', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardIssuesViewTemplate($dashboardContent, context);
+        });
+
+        this.post('#/dashboard/issues/:issueId', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.updateIssue($dashboardContent, context);
+        });
+        
         
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');

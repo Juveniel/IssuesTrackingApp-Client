@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="heading">
+        <h2>
+            <i class="ion-folder"></i>
+            Update issue
+        </h2>
+    </div>
+
+    <div class="content-wrapper">
+        <div id="upd-proj-issue-form-errors" class="auth-error-block alert alert-danger">
+            <strong>The following errors occurred:</strong>
+            <ul id="upd-proj-issue-form-errors-list"></ul>
+        </div>
+        <form method="post" action="#/dashboard/issues/{{issueId}}" class="form">
+            <div class="left col-sm-6">
+                <div class="form-group">
+                    <label>Status:</label>
+                    <div class="status-list">
+                        {{#each statuses}}
+                            <label>
+                                <input type="radio"
+                                       name="status"
+                                       value="{{this}}"
+                                       {{#ifCond this ../issue.status }}checked="checked"{{/ifCond}}
+                                />
+                                {{this}}
+                            </label>
+                            <i class="ion-arrow-right-c"></i>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Subject<span>(Required)</span></label>
+                    <input type="text" name="name" id="name" value="{{issue.name}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="description">Describe the issue<span>(Required)</span></label>
+                    <textarea name="description" id="description">{{issue.description}}</textarea>
+                </div>
+            </div>
+            <div class="right col-sm-6">
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        {{#each priorities}}
+                            {{option this this ../issue.priority}}
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="assignee">Assignee</label>
+                    <select name="assignee" id="assignee">
+                        {{#each issue.project.members}}
+                            {{option _id username ../issue.assignee._id}}
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        {{#each issue.project.categories}}
+                            {{option _id name ../issue.category._id}}
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" class="btn-gradient btn-gradient-lg gradient-green-blue" value="Update Issue">
+        </form>
+    </div>
+</div>

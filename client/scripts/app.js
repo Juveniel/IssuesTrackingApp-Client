@@ -150,6 +150,12 @@
 
             dashboardController.createNewProjectIssue($dashboardContent, context);
         });
+
+        this.get('#/dashboard/projects/:id/issues/list', function (context) {
+            utils.appendBodyClass('dashboard');
+
+            dashboardController.renderDashboardProjectIssuesListTemplate($dashboardContent, context);
+        });
         
         this.get('#/dashboard/account', function (context) {
             utils.appendBodyClass('dashboard');

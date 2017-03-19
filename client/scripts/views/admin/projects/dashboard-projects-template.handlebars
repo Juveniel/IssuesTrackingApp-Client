@@ -8,7 +8,7 @@
                     <tr>
                         <td class="name">
                             <strong>{{organization.name}}</strong>
-                            {{name}}
+                            <a href="#/dashboard/projects/{{_id}}/issues/list">{{name}}</a>
                         </td>
                         <td class="icon">
                             <a href="#/dashboard/projects/{{_id}}/issues/new" data-toggle="tooltip" title="New issue">
@@ -20,11 +20,13 @@
                                 <i class="ion-calendar"></i>
                             </a>
                         </td>
-                        <td class="icon">
-                            <a href="#/dashboard/projects/{{_id}}/settings" data-toggle="tooltip" title="Settings">
-                                <i class="ion-ios-cog-outline"></i>
-                            </a>
-                        </td>
+                        {{#ifCond ../user.role "admin"}}
+                            <td class="icon">
+                                <a href="#/dashboard/projects/{{_id}}/settings" data-toggle="tooltip" title="Settings">
+                                    <i class="ion-ios-cog-outline"></i>
+                                </a>
+                            </td>
+                        {{/ifCond}}
                         <td class="count">
                             <a href="#/dashboard/projects/issues/open">
                                 {{#countStatusInArray issues "Open" }}{{/countStatusInArray}}

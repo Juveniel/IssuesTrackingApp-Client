@@ -366,6 +366,34 @@ class DashboardController {
             });
     }
 
+    renderDashboardProjectIssuesListTemplate(content, context) {
+        var $content = content,
+            $header = $('#dashboard-header-pl'),
+            projectId = context.params['id'],
+            $loggedUser,
+            $project;
+
+        this.utils.getLoggedUser()
+            .then((result) => {
+                $loggedUser = result.user;
+
+                return this.requester.get(`/api/projects/${projectId}/data`);
+            })
+            .then((result) => {
+                $project = result.project;
+
+                return this.template.getTemplate('admin/projects/dashboard-project-issues-list-template');
+            })
+            .then((resultTemplate) => {
+                $header.html('Add new issue to project');
+                $content.html(resultTemplate({
+                    projectId: projectId,
+                    project: $project,
+                    user: $loggedUser
+                }));
+            });
+    }
+
     renderDashboardAccountTemplate(content, context) {
         var $content = content,
             $header = $('#dashboard-header-pl');

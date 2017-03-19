@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="heading">
+        <h2>
+            <i class="ion-folder"></i>
+            Project "{{project.name}}" issues list
+        </h2>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="issues-list col-sm-6">
+            {{#each project.issues}}
+                <div class="row">
+                    <div class="index">#{{@index}}</div>
+                    <div class="name">
+                        <a href="#/dashboard/projects/{{../project._id}}/issues/{{_id}}">
+                            {{name}}
+                        </a>
+                    </div>
+                    <div class="assignee">
+                        <i class="ion-ios-arrow-thin-right"></i>
+                        <span>{{assignee.username}}</span>
+                    </div>
+                    <div class="category">
+                        <div class="wrapper">
+                            {{category.name}}
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                No issues for this project at the moment.
+                <a href="#/dashboard/projects/{{project._id}}/issues/new">Add new issue</a>
+            {{/each}}
+        </div>
+        <div class="filter col-sm-6">
+
+        </div>
+    </div>
+</div>

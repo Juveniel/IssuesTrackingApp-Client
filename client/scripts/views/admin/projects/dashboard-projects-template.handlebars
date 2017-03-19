@@ -27,12 +27,12 @@
                         </td>
                         <td class="count">
                             <a href="#/dashboard/projects/issues/open">
-                                0
+                                {{#countStatusInArray issues "Open" }}{{/countStatusInArray}}
                             </a>
                         </td>
                         <td class="count">
                             <a href="#/dashboard/projects/issues/resolved">
-                                0
+                                {{#countStatusInArray issues "Resolved" }}{{/countStatusInArray}}
                             </a>
                         </td>
                     </tr>

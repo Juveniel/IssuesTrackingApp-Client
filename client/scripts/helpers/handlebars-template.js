@@ -19,6 +19,19 @@ Handlebars.registerHelper('inArray', function(collection, id, options) {
     return options.inverse(this);
 });
 
+Handlebars.registerHelper('countStatusInArray', function(collection, id) {
+    var collectionLength = collection.length,
+        count = 0;
+
+    for (var i = 0; i < collectionLength; i++) {
+        if (collection[i].status == id) {
+            count += 1;
+        }
+    }
+
+    return count;
+});
+
 class HandlebarsTemplate {
     constructor(){
         this.cache = {};

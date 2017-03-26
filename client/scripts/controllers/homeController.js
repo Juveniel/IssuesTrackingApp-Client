@@ -9,10 +9,12 @@ class HomeController {
 
     renderHomeTemplate(content, context) {
         var $content = content;
+        $('#preloader').show();
 
         this.template.getTemplate('home-template')
             .then((resultTemplate) => {
                 $content.html(resultTemplate);
+                $('#preloader').hide();
             });
     }
 

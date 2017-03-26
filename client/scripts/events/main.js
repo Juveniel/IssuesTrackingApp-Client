@@ -116,6 +116,18 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
+/*
+document.onreadystatechange = function () {
+    let state = document.readyState,
+        loader = document.getElementById('preloader'),
+        content = document.getElementById('content');
 
-
-
+    if (state === 'interactive') {
+        content.style.visibility = 'hidden';
+    } else if (state === 'complete') {
+        setTimeout(function(){
+            loader.style.visibility = 'hidden';
+            content.style.visibility = 'visible';
+        }, 0);
+    }
+};*/

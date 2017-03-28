@@ -36,17 +36,17 @@
                                 <i class="ion-calendar"></i>
                             </a>
                         </td>
-                        {{#ifCond ../user.role "admin"}}
-                            <td class="icon col-sm-1">
-                                <br>
+                        <td class="icon col-sm-1">
+                            <br>
+                            {{#ifCond ../user.role "admin"}}
                                 <a class="btn btn-info"
                                    href="#/dashboard/projects/{{_id}}/settings"
                                    data-toggle="tooltip"
                                    title="Settings">
                                     <i class="ion-ios-cog-outline"></i>
                                 </a>
-                            </td>
-                        {{/ifCond}}
+                            {{/ifCond}}
+                        </td>
                         <td class="count col-sm-1">
                             <br>
                             <a href="#/dashboard/projects/issues/open">

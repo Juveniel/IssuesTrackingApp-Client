@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <title>Book Store Tests</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+
+<body>
+<div id="mocha">Index</div>
+<div id="messages"></div>
+<div id="fixtures"></div>
+
+<script src="../client/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../client/bower_components/handlebars/handlebars.min.js"></script>
+
+<script src="../client/scripts/helpers/requester.js"></script>
+<script src="../client/scripts/helpers/handlebars-template.js"></script>
+<script src="../client/scripts/helpers/utils.js"></script>
+
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="./sinon-1.17.6.js"></script>
+
+<script src="../client/scripts/controllers/homeController.js"></script>
+<script>mocha.setup('bdd')</script>
+
+<script src="./Controllers/homeControllerTests.js"></script>
+<script>mocha.run();</script>
+
+</body>
+
+</html>

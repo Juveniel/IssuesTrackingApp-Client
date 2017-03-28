@@ -9,12 +9,12 @@ class HomeController {
 
     renderHomeTemplate(content, context) {
         var $content = content;
-        $('#preloader').show();
+        this.utils.showPreloader();
 
         this.template.getTemplate('home-template')
             .then((resultTemplate) => {
                 $content.html(resultTemplate);
-                $('#preloader').hide();
+                this.utils.hidePreloader(0);
             });
     }
 
@@ -24,24 +24,26 @@ class HomeController {
             errorsPlaceholder = $('#contact-form-errors'),
             errorsPlaceholderList = $('#contact-form-errors-list');
 
-        this.utils.validateRecaptcha('captcha-error');
+        var isRecaptchaValid = this.utils.validateRecaptcha('captcha-error');
 
-        this.requester.post('/api/home/contact', data)
-            .then((result) => {
-                if(result.success) {
-                    errorsPlaceholderList.html('');
-                    toastr.success(result.message);
+        if(isRecaptchaValid) {
+            this.requester.post('/api/home/contact', data)
+                .then((result) => {
+                    if(result.success) {
+                        errorsPlaceholderList.html('');
+                        toastr.success(result.message);
 
-                    // Clear form data
-                    $('#hp-contact-form')[0].reset();
-                    grecaptcha.reset();
-                }
-                else {
-                    this.utils.displayErrorsList(
-                        errorsPlaceholder,
-                        errorsPlaceholderList,
-                        result.validationErrors);
-                }
-            });
+                        // Clear form data
+                        $('#hp-contact-form')[0].reset();
+                        grecaptcha.reset();
+                    }
+                    else {
+                        this.utils.displayErrorsList(
+                            errorsPlaceholder,
+                            errorsPlaceholderList,
+                            result.validationErrors);
+                    }
+                });
+        }
     }
 }

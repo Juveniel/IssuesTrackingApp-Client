@@ -15,6 +15,9 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0"
   },
+  "scripts": {
+    "test": "start chrome http://127.0.0.1:8081/tests/index.html && http-server ./"
+  },
   "devDependencies": {
     "@types/core-js": "^0.9.35",
     "babel-core": "^6.23.1",

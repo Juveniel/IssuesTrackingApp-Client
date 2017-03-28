@@ -43,4 +43,12 @@ class Utils {
             return true;
         }
     }
+
+    showPreloader() {
+        $('#preloader').show();
+    }
+
+    hidePreloader(timeout) {
+        setTimeout(function(){ $('#preloader').hide(); }, timeout);
+    }
 }
